@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --black: #0A0A0A;
+  --dark: #141414;
+  --card: #1A1A1A;
+  --off-white: #F7F6F2;
+  --silver: #C9CCD1;
+  --mid: #8A9097;
+  --red: #D42B2B;
+  --red-deep: #8B0000;
+  --red-light: #FF4444;
+  --display: 'Barlow Condensed', sans-serif;
+  --body: 'Barlow', sans-serif;
+}
+body { background: var(--black); color: var(--off-white); font-family: var(--body); }
+
+/* PATTERN LIBRARY - diagonal shapes like reference image */
+.pat-wrap { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+
+/* diagonal bar */
+.bar {
+  position: absolute;
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+.section-label {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--mid);
+  padding: 2rem 2rem 0.75rem;
+  border-top: 0.5px solid rgba(255,255,255,0.08);
+}
+
+/* HERO */
+.hero {
+  padding: 2.5rem 2rem 2rem;
+  border-bottom: 0.5px solid rgba(255,255,255,0.08);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--dark);
+}
+
+/* hero pattern */
+.hero .pat-wrap .bar:nth-child(1) { width: 120px; height: 8px; background: var(--red); top: 20px; right: 60px; transform: rotate(-35deg); opacity: 0.9; }
+.hero .pat-wrap .bar:nth-child(2) { width: 80px; height: 5px; background: var(--red-deep); top: 44px; right: 40px; transform: rotate(-35deg); opacity: 0.7; }
+.hero .pat-wrap .bar:nth-child(3) { width: 50px; height: 5px; background: var(--off-white); top: 62px; right: 80px; transform: rotate(-35deg); opacity: 0.15; }
+.hero .pat-wrap .bar:nth-child(4) { width: 160px; height: 10px; background: var(--red); bottom: 16px; right: 20px; transform: rotate(-35deg); opacity: 0.6; }
+.hero .pat-wrap .bar:nth-child(5) { width: 90px; height: 6px; background: var(--red-deep); bottom: 36px; right: 60px; transform: rotate(-35deg); opacity: 0.5; }
+.hero .pat-wrap .bar:nth-child(6) { width: 40px; height: 4px; background: var(--off-white); bottom: 54px; right: 20px; transform: rotate(-35deg); opacity: 0.1; }
+
+.logo-wrap { width: 100px; height: 100px; flex-shrink: 0; position: relative; z-index: 1; }
+.logo-wrap img { width: 100%; height: 100%; object-fit: contain; }
+.hero-text { position: relative; z-index: 1; }
+.hero-name { font-family: var(--display); font-weight: 900; font-size: 46px; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.92; color: var(--off-white); margin-bottom: 5px; }
+.hero-name span { color: var(--red); }
+.hero-sub { font-family: var(--display); font-weight: 500; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+.hero-tagline { font-family: var(--body); font-size: 12px; font-weight: 300; color: var(--mid); }
+
+/* PALETTE */
+.palette-grid { display: grid; grid-template-columns: repeat(6, 1fr); margin: 0 2rem; border: 0.5px solid rgba(255,255,255,0.08); overflow: hidden; }
+.swatch { aspect-ratio: 1; display: flex; flex-direction: column; justify-content: flex-end; padding: 7px; }
+.swatch-name { font-family: var(--display); font-size: 8px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.3; }
+.swatch-hex { font-size: 7px; font-weight: 300; opacity: 0.65; font-family: monospace; }
+
+/* PATTERN SHOWCASE */
+.pattern-section { padding: 0 2rem 1.5rem; }
+.pattern-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.pattern-tile {
+  aspect-ratio: 1;
+  border: 0.5px solid rgba(255,255,255,0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pattern 1: diagonal bars red */
+.pt-1 { background: var(--black); }
+.pt-1 .bar:nth-child(1) { width: 140px; height: 10px; background: var(--red); top: 10px; left: -20px; transform: rotate(-35deg); }
+.pt-1 .bar:nth-child(2) { width: 100px; height: 7px; background: var(--red-deep); top: 30px; left: 10px; transform: rotate(-35deg); }
+.pt-1 .bar:nth-child(3) { width: 60px; height: 5px; background: rgba(247,246,242,0.15); top: 48px; left: -10px; transform: rotate(-35deg); }
+.pt-1 .bar:nth-child(4) { width: 160px; height: 12px; background: var(--red); top: 65px; left: -30px; transform: rotate(-35deg); }
+.pt-1 .bar:nth-child(5) { width: 80px; height: 6px; background: var(--red-deep); top: 88px; left: 20px; transform: rotate(-35deg); }
+.pt-1 .bar:nth-child(6) { width: 120px; height: 8px; background: var(--red); bottom: -10px; left: -10px; transform: rotate(-35deg); }
+
+/* Pattern 2: red bg white bars */
+.pt-2 { background: var(--red); }
+.pt-2 .bar:nth-child(1) { width: 100px; height: 8px; background: rgba(10,10,10,0.5); top: 10px; left: -10px; transform: rotate(-35deg); }
+.pt-2 .bar:nth-child(2) { width: 140px; height: 5px; background: rgba(247,246,242,0.3); top: 30px; left: -20px; transform: rotate(-35deg); }
+.pt-2 .bar:nth-child(3) { width: 80px; height: 10px; background: rgba(10,10,10,0.6); top: 55px; left: 10px; transform: rotate(-35deg); }
+.pt-2 .bar:nth-child(4) { width: 120px; height: 6px; background: rgba(247,246,242,0.25); bottom: 20px; left: -10px; transform: rotate(-35deg); }
+.pt-2 .bar:nth-child(5) { width: 60px; height: 8px; background: rgba(10,10,10,0.4); bottom: 0; left: 30px; transform: rotate(-35deg); }
+
+/* Pattern 3: dark grid + red accent */
+.pt-3 { background: var(--dark); }
+.pt-3 .bar:nth-child(1) { width: 30px; height: 30px; background: var(--red); top: 15px; left: 15px; transform: rotate(15deg); opacity: 0.9; border-radius: 3px; }
+.pt-3 .bar:nth-child(2) { width: 20px; height: 20px; background: var(--red-deep); top: 55px; left: 50px; transform: rotate(-20deg); border-radius: 2px; }
+.pt-3 .bar:nth-child(3) { width: 40px; height: 5px; background: var(--red); top: 80px; left: 10px; transform: rotate(-35deg); }
+.pt-3 .bar:nth-child(4) { width: 25px; height: 25px; border: 2px solid var(--red); top: 30px; right: 15px; transform: rotate(25deg); border-radius: 3px; }
+.pt-3 .bar:nth-child(5) { width: 15px; height: 15px; background: var(--red); bottom: 20px; right: 25px; transform: rotate(10deg); border-radius: 2px; }
+.pt-3 .bar:nth-child(6) { width: 50px; height: 4px; background: rgba(247,246,242,0.1); bottom: 30px; left: 0; transform: rotate(-35deg); }
+
+/* Pattern 4: offset diagonal heavy */
+.pt-4 { background: var(--black); }
+.pt-4 .bar:nth-child(1) { width: 200px; height: 18px; background: var(--red); top: -5px; left: -40px; transform: rotate(-35deg); opacity: 0.85; }
+.pt-4 .bar:nth-child(2) { width: 200px; height: 9px; background: var(--red-deep); top: 25px; left: -40px; transform: rotate(-35deg); }
+.pt-4 .bar:nth-child(3) { width: 200px; height: 5px; background: rgba(247,246,242,0.08); top: 44px; left: -40px; transform: rotate(-35deg); }
+.pt-4 .bar:nth-child(4) { width: 200px; height: 18px; background: var(--red); bottom: -5px; right: -40px; transform: rotate(-35deg); opacity: 0.85; }
+.pt-4 .bar:nth-child(5) { width: 200px; height: 9px; background: var(--red-deep); bottom: 25px; right: -40px; transform: rotate(-35deg); }
+
+.pattern-label { position: absolute; bottom: 8px; right: 8px; font-family: var(--display); font-size: 7px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(247,246,242,0.4); z-index: 1; }
+
+/* TYPOGRAPHY */
+.type-section { padding: 1.5rem 2rem; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
+.type-display { font-family: var(--display); font-weight: 900; font-size: 56px; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.9; color: var(--off-white); margin-bottom: 8px; }
+.type-display span { color: var(--red); }
+.type-label { font-family: var(--display); font-weight: 500; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--silver); margin-bottom: 10px; }
+.type-body { font-family: var(--body); font-size: 13px; font-weight: 300; color: var(--mid); line-height: 1.7; max-width: 520px; margin-bottom: 1.5rem; }
+.type-specs { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+.type-spec-name { font-family: var(--display); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
+.type-spec-value { font-family: var(--body); font-size: 11px; color: var(--silver); margin-top: 2px; }
+
+/* LOGO VARIANTS */
+.logo-variants { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 0 2rem 1.5rem; }
+.logo-var { aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; padding: 16px; border: 0.5px solid rgba(255,255,255,0.08); position: relative; overflow: hidden; }
+.logo-var img { width: 64px; height: 64px; object-fit: contain; position: relative; z-index: 1; }
+.lv-name { font-family: var(--display); font-weight: 900; font-size: 14px; text-transform: uppercase; letter-spacing: -0.01em; text-align: center; position: relative; z-index: 1; }
+.lv-sub { font-family: var(--display); font-size: 7px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; text-align: center; position: relative; z-index: 1; }
+
+/* lv pattern bars */
+.lv-pat { position: absolute; inset: 0; overflow: hidden; }
+.lv-pat .bar { position: absolute; }
+
+/* IG POSTS */
+.templates-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 0 2rem 1.5rem; }
+.ig-post { aspect-ratio: 1; overflow: hidden; position: relative; }
+
+.ig-1 { background: var(--black); border: 0.5px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; justify-content: space-between; padding: 14px; }
+.ig-1 .pat-wrap .bar:nth-child(1) { width: 100px; height: 7px; background: var(--red); bottom: 30px; right: -10px; transform: rotate(-35deg); }
+.ig-1 .pat-wrap .bar:nth-child(2) { width: 70px; height: 5px; background: var(--red-deep); bottom: 50px; right: 10px; transform: rotate(-35deg); }
+.ig-1 .pat-wrap .bar:nth-child(3) { width: 130px; height: 9px; background: var(--red); bottom: 10px; right: -20px; transform: rotate(-35deg); opacity: 0.7; }
+
+.ig-tag { font-family: var(--display); font-size: 7px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
+.ig-red-dot { width: 5px; height: 5px; background: var(--red); border-radius: 50%; }
+.ig-display { font-family: var(--display); font-weight: 900; font-size: 30px; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.92; color: var(--off-white); position: relative; z-index: 1; }
+.ig-display span { color: var(--red); }
+.ig-logo-tiny { width: 18px; height: 18px; object-fit: contain; opacity: 0.45; }
+
+.ig-2 { background: var(--red); display: flex; flex-direction: column; justify-content: space-between; padding: 14px; border: 0.5px solid rgba(212,43,43,0.3); }
+.ig-2 .pat-wrap .bar:nth-child(1) { width: 130px; height: 9px; background: rgba(10,10,10,0.4); top: 10px; left: -20px; transform: rotate(-35deg); }
+.ig-2 .pat-wrap .bar:nth-child(2) { width: 90px; height: 6px; background: rgba(247,246,242,0.2); top: 30px; left: -10px; transform: rotate(-35deg); }
+.ig-2 .pat-wrap .bar:nth-child(3) { width: 160px; height: 11px; background: rgba(10,10,10,0.5); top: 50px; left: -30px; transform: rotate(-35deg); }
+
+.ig-2-corner { width: 14px; height: 14px; border-top: 1px solid rgba(247,246,242,0.5); border-right: 1px solid rgba(247,246,242,0.5); align-self: flex-end; position: relative; z-index: 1; }
+.ig-2-stat { font-family: var(--display); font-weight: 900; font-size: 52px; text-transform: uppercase; color: var(--off-white); line-height: 0.88; letter-spacing: -0.02em; position: relative; z-index: 1; }
+.ig-2-sub { font-family: var(--display); font-size: 8px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(247,246,242,0.6); margin-top: 4px; position: relative; z-index: 1; }
+.ig-2-bottom { font-family: var(--display); font-size: 7px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,246,242,0.7); position: relative; z-index: 1; }
+
+.ig-3 { background: var(--dark); border: 0.5px solid rgba(255,255,255,0.06); display: flex; flex-direction: column; justify-content: space-between; padding: 14px; }
+.ig-3 .pat-wrap .bar:nth-child(1) { width: 60px; height: 60px; border: 2px solid rgba(212,43,43,0.3); top: -20px; right: -20px; transform: rotate(20deg); border-radius: 4px; }
+.ig-3 .pat-wrap .bar:nth-child(2) { width: 40px; height: 40px; border: 1.5px solid rgba(212,43,43,0.15); top: 10px; right: 10px; transform: rotate(20deg); border-radius: 3px; }
+
+.ig-3-line { width: 100%; height: 0.5px; background: rgba(201,204,209,0.12); }
+.ig-3-mid { flex: 1; display: flex; align-items: center; gap: 10px; padding: 10px 0; position: relative; z-index: 1; }
+.ig-3-bar { width: 3px; height: 40px; background: var(--red); flex-shrink: 0; }
+.ig-3-quote { font-family: var(--display); font-weight: 900; font-size: 16px; text-transform: uppercase; letter-spacing: -0.01em; color: var(--off-white); line-height: 1.05; }
+.ig-3-quote span { color: var(--red); }
+
+/* STORIES */
+.stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 0 2rem 1.5rem; }
+.story { aspect-ratio: 9/16; overflow: hidden; border: 0.5px solid rgba(255,255,255,0.08); position: relative; }
+
+.story-1 { background: var(--black); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; }
+.story-1 .pat-wrap .bar:nth-child(1) { width: 160px; height: 10px; background: var(--red); bottom: 30px; left: -30px; transform: rotate(-35deg); opacity: 0.8; }
+.story-1 .pat-wrap .bar:nth-child(2) { width: 120px; height: 7px; background: var(--red-deep); bottom: 55px; left: -10px; transform: rotate(-35deg); }
+.story-1 .pat-wrap .bar:nth-child(3) { width: 80px; height: 5px; background: rgba(247,246,242,0.08); bottom: 74px; left: 10px; transform: rotate(-35deg); }
+.story-1 .pat-wrap .bar:nth-child(4) { width: 100px; height: 8px; background: var(--red); top: 20px; right: -20px; transform: rotate(-35deg); opacity: 0.5; }
+
+.story-logo { width: 56px; height: 56px; object-fit: contain; margin-bottom: 12px; position: relative; z-index: 1; }
+.story-name { font-family: var(--display); font-weight: 900; font-size: 22px; text-transform: uppercase; letter-spacing: -0.01em; color: var(--off-white); text-align: center; line-height: 0.95; position: relative; z-index: 1; }
+.story-name span { color: var(--red); }
+.story-sub { font-family: var(--display); font-size: 7px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); text-align: center; margin-top: 6px; position: relative; z-index: 1; }
+
+.story-2 { background: var(--red); display: flex; flex-direction: column; justify-content: space-between; padding: 16px; }
+.story-2 .pat-wrap .bar:nth-child(1) { width: 160px; height: 12px; background: rgba(10,10,10,0.35); top: 20px; left: -30px; transform: rotate(-35deg); }
+.story-2 .pat-wrap .bar:nth-child(2) { width: 100px; height: 8px; background: rgba(247,246,242,0.2); top: 46px; left: -10px; transform: rotate(-35deg); }
+.story-2 .pat-wrap .bar:nth-child(3) { width: 200px; height: 14px; background: rgba(10,10,10,0.4); top: 68px; left: -50px; transform: rotate(-35deg); }
+
+.story-2-top { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+.story-2-tag { font-family: var(--display); font-size: 7px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,246,242,0.8); }
+.story-2-dot { width: 4px; height: 4px; background: rgba(247,246,242,0.8); border-radius: 50%; }
+.story-2-display { font-family: var(--display); font-weight: 900; font-size: 30px; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.92; color: var(--off-white); margin-bottom: 8px; position: relative; z-index: 1; }
+.story-2-cta { font-family: var(--display); font-size: 7px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,246,242,0.6); padding-top: 8px; border-top: 0.5px solid rgba(247,246,242,0.2); position: relative; z-index: 1; }
+
+.story-3 { background: var(--dark); display: flex; flex-direction: column; justify-content: space-between; padding: 16px; }
+.story-3 .pat-wrap .bar:nth-child(1) { width: 50px; height: 50px; border: 2px solid rgba(212,43,43,0.4); top: 10px; right: 10px; transform: rotate(20deg); border-radius: 4px; }
+.story-3 .pat-wrap .bar:nth-child(2) { width: 35px; height: 35px; border: 1.5px solid rgba(212,43,43,0.2); top: 22px; right: 22px; transform: rotate(20deg); border-radius: 3px; }
+
+.story-3-logo-wrap { display: flex; justify-content: flex-end; position: relative; z-index: 1; }
+.story-3-logo { width: 24px; height: 24px; object-fit: contain; opacity: 0.35; }
+.story-3-num { font-family: var(--display); font-weight: 900; font-size: 52px; text-transform: uppercase; color: var(--red); line-height: 0.85; letter-spacing: -0.02em; position: relative; z-index: 1; }
+.story-3-sub { font-family: var(--display); font-size: 8px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); margin-top: 6px; position: relative; z-index: 1; }
+.story-3-rule { width: 24px; height: 2px; background: var(--red); margin-top: 8px; position: relative; z-index: 1; }
+
+/* REELS */
+.reels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 0 2rem 1.5rem; }
+.reel { aspect-ratio: 9/16; overflow: hidden; position: relative; }
+
+.reel-1 { background: var(--black); border: 0.5px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; justify-content: flex-end; padding: 12px; }
+.reel-1 .pat-wrap .bar:nth-child(1) { width: 160px; height: 11px; background: var(--red); top: 20px; left: -30px; transform: rotate(-35deg); opacity: 0.8; }
+.reel-1 .pat-wrap .bar:nth-child(2) { width: 110px; height: 7px; background: var(--red-deep); top: 44px; left: -10px; transform: rotate(-35deg); }
+.reel-1 .pat-wrap .bar:nth-child(3) { width: 70px; height: 5px; background: rgba(247,246,242,0.08); top: 63px; left: 10px; transform: rotate(-35deg); }
+
+.reel-1-content { position: relative; z-index: 1; }
+.reel-play { width: 22px; height: 22px; border: 1.5px solid var(--red); display: flex; align-items: center; justify-content: center; margin-bottom: 8px; }
+.reel-play::after { content: ''; width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 7px solid var(--red); margin-left: 2px; }
+.reel-display { font-family: var(--display); font-weight: 900; font-size: 22px; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.92; color: var(--off-white); }
+.reel-display span { color: var(--red); }
+
+.reel-2 { background: var(--red); border: 0.5px solid rgba(212,43,43,0.3); display: flex; flex-direction: column; justify-content: space-between; padding: 12px; }
+.reel-2 .pat-wrap .bar:nth-child(1) { width: 120px; height: 9px; background: rgba(10,10,10,0.4); top: 10px; left: -20px; transform: rotate(-35deg); }
+.reel-2 .pat-wrap .bar:nth-child(2) { width: 160px; height: 12px; background: rgba(10,10,10,0.3); top: 34px; left: -30px; transform: rotate(-35deg); }
+.reel-2 .pat-wrap .bar:nth-child(3) { width: 80px; height: 6px; background: rgba(247,246,242,0.2); top: 56px; left: 0; transform: rotate(-35deg); }
+
+.reel-2-tag { font-family: var(--display); font-size: 7px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,246,242,0.7); position: relative; z-index: 1; }
+.reel-2-bg-num { font-family: var(--display); font-weight: 900; font-size: 58px; color: rgba(10,10,10,0.2); line-height: 1; letter-spacing: -0.02em; position: relative; z-index: 1; }
+.reel-2-display { font-family: var(--display); font-weight: 900; font-size: 22px; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.92; color: var(--off-white); margin-top: -22px; position: relative; z-index: 1; }
+
+.reel-3 { background: var(--dark); border: 0.5px solid rgba(212,43,43,0.15); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px; gap: 10px; }
+.reel-3 .pat-wrap .bar:nth-child(1) { width: 50px; height: 50px; border: 2px solid rgba(212,43,43,0.35); top: 20px; right: 20px; transform: rotate(25deg); border-radius: 4px; }
+.reel-3 .pat-wrap .bar:nth-child(2) { width: 30px; height: 30px; background: rgba(212,43,43,0.12); bottom: 30px; left: 20px; transform: rotate(15deg); border-radius: 3px; }
+.reel-3 .pat-wrap .bar:nth-child(3) { width: 80px; height: 5px; background: var(--red); bottom: 60px; left: -10px; transform: rotate(-35deg); opacity: 0.6; }
+
+.reel-3-logo { width: 48px; height: 48px; object-fit: contain; position: relative; z-index: 1; }
+.reel-3-display { font-family: var(--display); font-weight: 900; font-size: 18px; text-transform: uppercase; letter-spacing: -0.01em; text-align: center; line-height: 0.95; color: var(--off-white); position: relative; z-index: 1; }
+.reel-3-display span { color: var(--red); }
+
+/* WEBSITE */
+.website-concept { margin: 0 2rem 1.5rem; border: 0.5px solid rgba(255,255,255,0.08); background: var(--dark); overflow: hidden; position: relative; }
+.web-nav { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 0.5px solid rgba(255,255,255,0.06); }
+.web-nav-logo { display: flex; align-items: center; gap: 8px; }
+.web-nav-logo img { width: 20px; height: 20px; object-fit: contain; }
+.web-nav-logo-text { font-family: var(--display); font-weight: 900; font-size: 14px; text-transform: uppercase; letter-spacing: -0.01em; color: var(--off-white); }
+.web-nav-logo-text span { color: var(--red); }
+.web-nav-items { display: flex; gap: 16px; }
+.web-nav-item { font-family: var(--display); font-size: 8px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); }
+.web-nav-cta { font-family: var(--display); font-size: 8px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); border: 0.5px solid var(--red); padding: 4px 10px; }
+.web-hero { padding: 28px 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; border-bottom: 0.5px solid rgba(255,255,255,0.06); }
+.web-eyebrow { font-family: var(--display); font-size: 8px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+.web-display { font-family: var(--display); font-weight: 900; font-size: 36px; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.9; color: var(--off-white); margin-bottom: 10px; }
+.web-display span { color: var(--red); }
+.web-body { font-family: var(--body); font-size: 9px; font-weight: 300; line-height: 1.7; color: var(--mid); margin-bottom: 14px; }
+.web-cta-row { display: flex; gap: 10px; align-items: center; }
+.web-cta-primary { font-family: var(--display); font-size: 8px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--off-white); background: var(--red); padding: 7px 14px; }
+.web-cta-ghost { font-family: var(--display); font-size: 8px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--silver); border-bottom: 0.5px solid var(--mid); padding-bottom: 1px; }
+.web-visual { aspect-ratio: 4/3; background: var(--red); border: 0.5px solid rgba(212,43,43,0.3); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.web-visual .pat-wrap .bar:nth-child(1) { width: 200px; height: 14px; background: rgba(10,10,10,0.4); top: 10px; left: -40px; transform: rotate(-35deg); }
+.web-visual .pat-wrap .bar:nth-child(2) { width: 150px; height: 9px; background: rgba(247,246,242,0.15); top: 36px; left: -20px; transform: rotate(-35deg); }
+.web-visual .pat-wrap .bar:nth-child(3) { width: 200px; height: 12px; background: rgba(10,10,10,0.5); bottom: 10px; right: -40px; transform: rotate(-35deg); }
+.web-visual img { width: 56px; height: 56px; object-fit: contain; opacity: 0.4; position: relative; z-index: 1; }
+.web-stats { display: grid; grid-template-columns: repeat(3, 1fr); }
+.web-stat { padding: 12px 16px; border-right: 0.5px solid rgba(255,255,255,0.06); }
+.web-stat:last-child { border-right: none; }
+.web-stat-num { font-family: var(--display); font-weight: 900; font-size: 20px; text-transform: uppercase; color: var(--red); line-height: 1; margin-bottom: 2px; letter-spacing: -0.01em; }
+.web-stat-label { font-family: var(--display); font-size: 7px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); }
+
+/* LINKEDIN */
+.linkedin-section { padding: 0 2rem 1.5rem; }
+.linkedin-banner { aspect-ratio: 4; background: var(--dark); border: 0.5px solid rgba(255,255,255,0.08); display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 0 28px; position: relative; overflow: hidden; }
+.linkedin-banner .pat-wrap .bar:nth-child(1) { width: 200px; height: 12px; background: var(--red); top: 0; right: 80px; transform: rotate(-35deg); opacity: 0.7; }
+.linkedin-banner .pat-wrap .bar:nth-child(2) { width: 140px; height: 8px; background: var(--red-deep); top: 22px; right: 60px; transform: rotate(-35deg); }
+.linkedin-banner .pat-wrap .bar:nth-child(3) { width: 80px; height: 5px; background: rgba(247,246,242,0.06); top: 40px; right: 100px; transform: rotate(-35deg); }
+.linkedin-banner .pat-wrap .bar:nth-child(4) { width: 160px; height: 10px; background: var(--red); bottom: 0; right: 40px; transform: rotate(-35deg); opacity: 0.5; }
+.linkedin-banner::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, var(--red) 0%, var(--red-deep) 100%); }
+.li-left { position: relative; z-index: 1; }
+.li-display { font-family: var(--display); font-weight: 900; font-size: 28px; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.9; color: var(--off-white); }
+.li-display span { color: var(--red); }
+.li-sub { font-family: var(--display); font-size: 8px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--red); margin-top: 5px; }
+.li-right { display: flex; align-items: center; gap: 14px; position: relative; z-index: 1; }
+.li-logo { width: 44px; height: 44px; object-fit: contain; }
+.li-detail { text-align: right; }
+.li-detail-label { font-family: var(--display); font-size: 7px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); }
+.li-detail-val { font-family: var(--display); font-weight: 900; font-size: 11px; text-transform: uppercase; color: var(--off-white); letter-spacing: -0.01em; margin-top: 1px; }
+
+/* OVERLAYS */
+.overlays-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 2rem 1.5rem; }
+.overlay-card { border: 0.5px solid rgba(255,255,255,0.08); background: var(--dark); padding: 14px; position: relative; overflow: hidden; }
+.overlay-title { font-family: var(--display); font-size: 8px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 10px; position: relative; z-index: 1; }
+.lower-third { border-left: 3px solid var(--red); padding-left: 10px; position: relative; z-index: 1; }
+.lt-name { font-family: var(--display); font-weight: 900; font-size: 18px; text-transform: uppercase; letter-spacing: -0.01em; color: var(--off-white); line-height: 1; }
+.lt-title { font-family: var(--display); font-size: 8px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-top: 3px; }
+.caption-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(139,0,0,0.6); border: 0.5px solid var(--red); padding: 5px 10px; margin-bottom: 8px; position: relative; z-index: 1; }
+.cap-dot { width: 4px; height: 4px; background: var(--red); border-radius: 50%; }
+.cap-text { font-family: var(--display); font-size: 8px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--off-white); }
+.cap-display { font-family: var(--display); font-weight: 900; font-size: 18px; text-transform: uppercase; letter-spacing: -0.01em; color: var(--red); display: block; margin-top: 4px; line-height: 1; position: relative; z-index: 1; }
+.kinetic-inner { border: 0.5px solid rgba(255,255,255,0.06); padding: 12px; position: relative; z-index: 1; }
+.kinetic-display { font-family: var(--display); font-weight: 900; font-size: 26px; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.9; color: var(--off-white); }
+.kinetic-display .accent { color: var(--red); }
+.kinetic-display .muted { color: var(--silver); }
+.kinetic-meta { font-family: var(--display); font-size: 7px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-top: 10px; }
+.stat-big { font-family: var(--display); font-weight: 900; font-size: 38px; text-transform: uppercase; color: var(--red); line-height: 0.9; letter-spacing: -0.02em; position: relative; z-index: 1; }
+.stat-label { font-family: var(--display); font-size: 9px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--silver); line-height: 1.4; position: relative; z-index: 1; }
+.stat-rule { width: 100%; height: 0.5px; background: rgba(212,43,43,0.3); margin-top: 8px; position: relative; z-index: 1; }
+
+/* overlay card patterns */
+.ov-pat .bar { position: absolute; }
+.ov-pat .bar:nth-child(1) { width: 80px; height: 6px; background: rgba(212,43,43,0.15); bottom: 14px; right: -10px; transform: rotate(-35deg); }
+.ov-pat .bar:nth-child(2) { width: 50px; height: 4px; background: rgba(212,43,43,0.1); bottom: 28px; right: 10px; transform: rotate(-35deg); }
+
+/* PILLARS */
+.brand-voice { display: grid; grid-template-columns: repeat(4, 1fr); margin: 0 2rem 1.5rem; border: 0.5px solid rgba(255,255,255,0.08); }
+.voice-item { padding: 16px 12px; border-right: 0.5px solid rgba(255,255,255,0.08); text-align: center; }
+.voice-item:last-child { border-right: none; }
+.voice-word { font-family: var(--display); font-weight: 900; font-size: 20px; text-transform: uppercase; letter-spacing: -0.01em; color: var(--red); margin-bottom: 6px; }
+.voice-rule { width: 16px; height: 2px; background: var(--red-deep); margin: 0 auto 8px; }
+.voice-desc { font-family: var(--body); font-size: 8px; font-weight: 300; color: var(--mid); line-height: 1.5; }
+
+/* FOOTER */
+.kit-footer { padding: 1.5rem 2rem; border-top: 0.5px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; background: var(--dark); position: relative; overflow: hidden; }
+.kit-footer .pat-wrap .bar:nth-child(1) { width: 120px; height: 8px; background: rgba(212,43,43,0.2); top: 0; right: 40px; transform: rotate(-35deg); }
+.kit-footer .pat-wrap .bar:nth-child(2) { width: 80px; height: 5px; background: rgba(212,43,43,0.12); bottom: 0; right: 80px; transform: rotate(-35deg); }
+.footer-logo { display: flex; align-items: center; gap: 10px; position: relative; z-index: 1; }
+.footer-logo img { width: 22px; height: 22px; object-fit: contain; }
+.footer-brand { font-family: var(--display); font-weight: 900; font-size: 13px; text-transform: uppercase; letter-spacing: -0.01em; color: var(--off-white); }
+.footer-brand span { color: var(--red); }
+.footer-year { font-family: var(--display); font-size: 9px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid); position: relative; z-index: 1; }
+</style>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="pat-wrap">
+    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+  </div>
+  <div class="logo-wrap"><img src="/mnt/user-data/uploads/IBEMOTION-logo.png" alt="IBE Motion logo"></div>
+  <div class="hero-text">
+    <div class="hero-name">IBE <span>Motion</span><br>Studio</div>
+    <div class="hero-sub">Content Creation &middot; Branding &middot; Strategy</div>
+    <div class="hero-tagline">Landgraaf, Limburg &mdash; Building globally.</div>
+  </div>
+</div>
+
+<!-- COLORS -->
+<div class="section-label">Color System</div>
+<div class="palette-grid">
+  <div class="swatch" style="background:#0A0A0A;"><span class="swatch-name" style="color:#F7F6F2">Obsidian</span><span class="swatch-hex" style="color:#8A9097">#0A0A0A</span></div>
+  <div class="swatch" style="background:#141414;"><span class="swatch-name" style="color:#F7F6F2">Dark</span><span class="swatch-hex" style="color:#8A9097">#141414</span></div>
+  <div class="swatch" style="background:#D42B2B;"><span class="swatch-name" style="color:#F7F6F2">Red</span><span class="swatch-hex" style="color:#F7F6F2">#D42B2B</span></div>
+  <div class="swatch" style="background:#8B0000;"><span class="swatch-name" style="color:#D42B2B">Deep Red</span><span class="swatch-hex" style="color:#D42B2B">#8B0000</span></div>
+  <div class="swatch" style="background:#8A9097;"><span class="swatch-name" style="color:#0A0A0A">Slate</span><span class="swatch-hex" style="color:#0A0A0A">#8A9097</span></div>
+  <div class="swatch" style="background:#F7F6F2;"><span class="swatch-name" style="color:#0A0A0A">Ivory</span><span class="swatch-hex" style="color:#8A9097">#F7F6F2</span></div>
+</div>
+
+<!-- PATTERN SHOWCASE -->
+<div class="section-label">Pattern System</div>
+<div class="pattern-section">
+  <div class="pattern-grid">
+    <div class="pattern-tile pt-1">
+      <div class="pat-wrap"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+      <span class="pattern-label">Diagonal Bars</span>
+    </div>
+    <div class="pattern-tile pt-2">
+      <div class="pat-wrap"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+      <span class="pattern-label">Red Field</span>
+    </div>
+    <div class="pattern-tile pt-3">
+      <div class="pat-wrap"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+      <span class="pattern-label">Geometric</span>
+    </div>
+    <div class="pattern-tile pt-4">
+      <div class="pat-wrap"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+      <span class="pattern-label">Heavy Sweep</span>
+    </div>
+  </div>
+</div>
+
+<!-- TYPOGRAPHY -->
+<div class="section-label">Typography</div>
+<div class="type-section">
+  <div class="type-display">Frame every <span>moment</span><br>with intent.</div>
+  <div class="type-label">Content Creation &middot; AI-Powered Production &middot; Landgraaf</div>
+  <div class="type-body">IBE Motion Studio creates content that moves. Premium AI-powered production for DTC tech brands that refuse to be ordinary.</div>
+  <div class="type-specs">
+    <div><div class="type-spec-name">Display</div><div class="type-spec-value">Barlow Condensed Black 900</div></div>
+    <div><div class="type-spec-name">Label</div><div class="type-spec-value">Barlow Condensed Medium 500</div></div>
+    <div><div class="type-spec-name">Body</div><div class="type-spec-value">Barlow Light 300</div></div>
+    <div><div class="type-spec-name">Accent</div><div class="type-spec-value">Red #D42B2B</div></div>
+  </div>
+</div>
+
+<!-- LOGO VARIANTS -->
+<div class="section-label">Logo Variants</div>
+<div class="logo-variants">
+  <div class="logo-var" style="background:#0A0A0A;">
+    <div class="lv-pat">
+      <div class="bar" style="width:80px;height:6px;background:#D42B2B;bottom:14px;right:-10px;transform:rotate(-35deg);opacity:0.7;position:absolute;border-radius:2px;"></div>
+      <div class="bar" style="width:50px;height:4px;background:#8B0000;bottom:28px;right:10px;transform:rotate(-35deg);opacity:0.5;position:absolute;border-radius:2px;"></div>
+    </div>
+    <img src="/mnt/user-data/uploads/IBEMOTION-logo.png" alt="IBE Motion">
+    <div class="lv-name" style="color:#F7F6F2">IBE <span style="color:#D42B2B">Motion</span></div>
+    <div class="lv-sub" style="color:#8A9097">Studio</div>
+  </div>
+  <div class="logo-var" style="background:#F7F6F2;">
+    <div class="lv-pat">
+      <div class="bar" style="width:80px;height:6px;background:#D42B2B;bottom:14px;right:-10px;transform:rotate(-35deg);opacity:0.4;position:absolute;border-radius:2px;"></div>
+      <div class="bar" style="width:50px;height:4px;background:#8B0000;bottom:28px;right:10px;transform:rotate(-35deg);opacity:0.25;position:absolute;border-radius:2px;"></div>
+    </div>
+    <img src="/mnt/user-data/uploads/IBEMOTION-logo.png" alt="IBE Motion" style="filter:sepia(0.3) contrast(0.8);">
+    <div class="lv-name" style="color:#0A0A0A">IBE <span style="color:#D42B2B">Motion</span></div>
+    <div class="lv-sub" style="color:#8A9097">Studio</div>
+  </div>
+  <div class="logo-var" style="background:#D42B2B;">
+    <div class="lv-pat">
+      <div class="bar" style="width:80px;height:6px;background:rgba(10,10,10,0.3);bottom:14px;right:-10px;transform:rotate(-35deg);position:absolute;border-radius:2px;"></div>
+      <div class="bar" style="width:50px;height:4px;background:rgba(247,246,242,0.2);bottom:28px;right:10px;transform:rotate(-35deg);position:absolute;border-radius:2px;"></div>
+    </div>
+    <img src="/mnt/user-data/uploads/IBEMOTION-logo.png" alt="IBE Motion">
+    <div class="lv-name" style="color:#F7F6F2">IBE Motion</div>
+    <div class="lv-sub" style="color:rgba(247,246,242,0.7)">Studio</div>
+  </div>
+</div>
+
+<!-- IG POSTS -->
+<div class="section-label">Instagram Post Templates</div>
+<div class="templates-grid">
+  <div class="ig-post ig-1">
+    <div class="pat-wrap"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;"><div class="ig-tag">IBE Motion</div><div class="ig-red-dot"></div></div>
+    <div style="flex:1;display:flex;align-items:center;padding:10px 0;"><div class="ig-display">Every<br>frame<br><span>tells a<br>story.</span></div></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;"><div class="ig-tag">@ibemotionstudio</div><img src="/mnt/user-data/uploads/IBEMOTION-logo.png" alt="" class="ig-logo-tiny"></div>
+  </div>
+  <div class="ig-post ig-2">
+    <div class="pat-wrap"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+    <div class="ig-2-corner"></div>
+    <div><div class="ig-2-stat">3X</div><div class="ig-2-sub">Client engagement increase</div></div>
+    <div class="ig-2-bottom">@ibemotionstudio</div>
+  </div>
+  <div class="ig-post ig-3">
+    <div class="pat-wrap"><div class="bar"></div><div class="bar"></div></div>
+    <div class="ig-3-line"></div>
+    <div class="ig-3-mid"><div class="ig-3-bar"></div><div class="ig-3-quote">Premium<br>content for<br>brands that<br><span>mean business.</span></div></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;"><div class="ig-tag">IBE &middot; 2026</div><img src="/mnt/user-data/uploads/IBEMOTION-logo.png" alt="" style="width:16px;height:16px;object-fit:contain;opacity:0.35;"></div>
+  </div>
+</div>
+
+<!-- STORIES -->
+<div class="section-label">Story Templates</div>
+<div class="stories-grid">
+  <div class="story story-1">
+    <div class="pat-wrap"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+    <img src="/mnt/user-data/uploads/IBEMOTION-logo.png" alt="IBE Motion" class="story-logo">
+    <div class="story-name">IBE <span>Motion</span><br>Studio</div>
+    <div class="story-sub">Raw &middot; Premium &middot; Urban</div>
+  </div>
+  <div class="story story-2">
+    <div class="pat-wrap"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+    <div class="story-2-top"><div class="story-2-tag">Now live</div><div class="story-2-dot"></div></div>
+    <div><div class="story-2-display">Your<br>brand,<br>elevated.</div><div class="story-2-cta">View latest work &rarr;</div></div>
+  </div>
+  <div class="story story-3">
+    <div class="pat-wrap"><div class="bar"></div><div class="bar"></div></div>
+    <div class="story-3-logo-wrap"><img src="/mnt/user-data/uploads/IBEMOTION-logo.png" alt="" class="story-3-logo"></div>
+    <div><div class="story-3-num">60S</div><div class="story-3-sub">Watch-through<br>on every reel</div><div class="story-3-rule"></div></div>
+  </div>
+</div>
+
+<!-- REELS -->
+<div class="section-label">Reel Cover Templates</div>
+<div class="reels-grid">
+  <div class="reel reel-1">
+    <div class="pat-wrap"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+    <div class="reel-1-content"><div class="reel-play"></div><div class="reel-display">Product<br><span>Launch</span><br>Reel</div></div>
+  </div>
+  <div class="reel reel-2">
+    <div class="pat-wrap"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+    <div class="reel-2-tag">Case Study</div>
+    <div><div class="reel-2-bg-num">01</div><div class="reel-2-display">From brief<br>to brand<br>moment.</div></div>
+  </div>
+  <div class="reel reel-3">
+    <div class="pat-wrap"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+    <img src="/mnt/user-data/uploads/IBEMOTION-logo.png" alt="IBE Motion" class="reel-3-logo">
+    <div class="reel-3-display">Behind the<br>lens with<br><span>IBE</span></div>
+  </div>
+</div>
+
+<!-- WEBSITE -->
+<div class="section-label">Website Concept</div>
+<div class="website-concept">
+  <div class="web-nav">
+    <div class="web-nav-logo"><img src="/mnt/user-data/uploads/IBEMOTION-logo.png" alt="IBE Motion"><span class="web-nav-logo-text">IBE <span>Motion</span></span></div>
+    <div class="web-nav-items"><span class="web-nav-item">Work</span><span class="web-nav-item">Services</span><span class="web-nav-item">About</span></div>
+    <div class="web-nav-cta">Let's talk</div>
+  </div>
+  <div class="web-hero">
+    <div>
+      <div class="web-eyebrow">Premium Content Studio</div>
+      <div class="web-display">We create<br>content<br>that <span>moves</span><br>people.</div>
+      <div class="web-body">AI-powered content production for DTC tech brands. From product launches to brand campaigns that convert.</div>
+      <div class="web-cta-row"><div class="web-cta-primary">View our work</div><div class="web-cta-ghost">Our process</div></div>
+    </div>
+    <div class="web-visual">
+      <div class="pat-wrap"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+      <img src="/mnt/user-data/uploads/IBEMOTION-logo.png" alt="">
+    </div>
+  </div>
+  <div class="web-stats">
+    <div class="web-stat"><div class="web-stat-num">3X</div><div class="web-stat-label">Avg. engagement lift</div></div>
+    <div class="web-stat"><div class="web-stat-num">50+</div><div class="web-stat-label">Brands produced for</div></div>
+    <div class="web-stat"><div class="web-stat-num">AI-first</div><div class="web-stat-label">Production workflow</div></div>
+  </div>
+</div>
+
+<!-- LINKEDIN -->
+<div class="section-label">LinkedIn Banner</div>
+<div class="linkedin-section">
+  <div class="linkedin-banner">
+    <div class="pat-wrap"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+    <div class="li-left"><div class="li-display">IBE <span>Motion</span> Studio</div><div class="li-sub">AI Content &middot; DTC Brands &middot; Landgraaf</div></div>
+    <div class="li-right">
+      <div class="li-detail"><div class="li-detail-label">Based in</div><div class="li-detail-val">Limburg, NL</div></div>
+      <img src="/mnt/user-data/uploads/IBEMOTION-logo.png" alt="IBE Motion" class="li-logo">
+    </div>
+  </div>
+</div>
+
+<!-- OVERLAYS -->
+<div class="section-label">Motion Graphic Overlays</div>
+<div class="overlays-grid">
+  <div class="overlay-card">
+    <div class="ov-pat"><div class="bar"></div><div class="bar"></div></div>
+    <div class="overlay-title">Lower third</div>
+    <div class="lower-third"><div class="lt-name">Bob Ibe</div><div class="lt-title">Founder &middot; IBE Motion Studio</div></div>
+  </div>
+  <div class="overlay-card">
+    <div class="ov-pat"><div class="bar"></div><div class="bar"></div></div>
+    <div class="overlay-title">Caption pill</div>
+    <div class="caption-pill"><div class="cap-dot"></div><span class="cap-text">Live &middot; Landgraaf</span></div>
+    <span class="cap-display">Behind the lens.</span>
+  </div>
+  <div class="overlay-card">
+    <div class="ov-pat"><div class="bar"></div><div class="bar"></div></div>
+    <div class="overlay-title">Kinetic text card</div>
+    <div class="kinetic-inner">
+      <div class="kinetic-display"><span class="accent">Raw.</span><br><span class="muted">Premium.</span><br>Urban.</div>
+      <div class="kinetic-meta">IBE Motion Studio &middot; 2026</div>
+    </div>
+  </div>
+  <div class="overlay-card">
+    <div class="ov-pat"><div class="bar"></div><div class="bar"></div></div>
+    <div class="overlay-title">Stat overlay</div>
+    <div style="display:flex;align-items:flex-end;gap:10px;margin-bottom:8px;">
+      <div class="stat-big">3X</div>
+      <div class="stat-label">More reach<br>per post</div>
+    </div>
+    <div class="stat-rule"></div>
+  </div>
+</div>
+
+<!-- PILLARS -->
+<div class="section-label">Brand Pillars</div>
+<div class="brand-voice">
+  <div class="voice-item"><div class="voice-word">Raw</div><div class="voice-rule"></div><div class="voice-desc">Unfiltered authenticity. Real process, real results.</div></div>
+  <div class="voice-item"><div class="voice-word">Premium</div><div class="voice-rule"></div><div class="voice-desc">Every frame intentional. No filler, no fluff.</div></div>
+  <div class="voice-item"><div class="voice-word">Urban</div><div class="voice-rule"></div><div class="voice-desc">Street-rooted. Built for culture that moves fast.</div></div>
+  <div class="voice-item"><div class="voice-word">Intelligent</div><div class="voice-rule"></div><div class="voice-desc">AI-powered precision. Systems that scale.</div></div>
+</div>
+
+<!-- FOOTER -->
+<div class="kit-footer">
+  <div class="pat-wrap"><div class="bar"></div><div class="bar"></div></div>
+  <div class="footer-logo"><img src="/mnt/user-data/uploads/IBEMOTION-logo.png" alt="IBE Motion"><span class="footer-brand">IBE <span>Motion</span> Studio</span></div>
+  <div class="footer-year">Brand Identity System &middot; 2026</div>
+</div>

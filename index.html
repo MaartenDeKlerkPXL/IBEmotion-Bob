@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IBE Motion Studio — Motion Design & AI Content Marketing</title>
+  <meta name="description" content="IBE Motion Studio maakt premium motion design, product visuals en AI-gedreven content marketing. Gebaseerd in Landgraaf, Limburg. Plan een gratis kennismakingsgesprek." />
+  <meta name="keywords" content="motion design, motion graphics, AI content, product visuals, short form content, storytelling, content marketing, video productie, Landgraaf, Limburg" />
+  <meta name="author" content="IBE Motion Studio" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="IBE Motion Studio — Motion Design & AI Content" />
+  <meta property="og:description" content="Premium motion design. AI-fundament, menselijke connectie." />
+  <meta property="og:image" content="og-image.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ibemotionstudio.nl" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://ibemotionstudio.nl" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;800;900&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-inner">
+      <img src="IBEMOTION-logo.png" alt="IBE Motion Studio" class="loader-logo" />
+      <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+      <div class="loader-text" id="loaderText">LOADING</div>
+    </div>
+  </div>
+
+  <!-- CURSOR -->
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <img src="IBEMOTION-logo.png" alt="IBE Motion Studio logo" class="nav-logo-img" />
+        <div class="nav-logo-text">
+          <span class="nl-ibe">IBE</span>
+          <span class="nl-motion">MOTION STUDIO</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#over" class="nav-link">Over</a></li>
+        <li><a href="#diensten" class="nav-link">Diensten</a></li>
+        <li><a href="#prijzen" class="nav-link">Prijzen</a></li>
+        <li><a href="#werk" class="nav-link">Werk</a></li>
+        <li><a href="#contact" class="nav-cta">Kennismaking →</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#over" class="mob-link">Over</a>
+      <a href="#diensten" class="mob-link">Diensten</a>
+      <a href="#prijzen" class="mob-link">Prijzen</a>
+      <a href="#werk" class="mob-link">Werk</a>
+      <a href="#contact" class="mob-cta">Plan kennismaking →</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section id="home" class="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-noise"></div>
+
+    <!-- diagonal brand bars -->
+    <div class="hero-bars">
+      <div class="hbar hbar-1"></div>
+      <div class="hbar hbar-2"></div>
+      <div class="hbar hbar-3"></div>
+    </div>
+
+    <div class="hero-content" id="heroContent">
+      <div class="hero-eyebrow" id="heroEye">
+        <span class="eye-dot"></span>
+        <span>MOTION DESIGN STUDIO — LANDGRAAF</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="ht-line" id="htLine1">BEWEGING</span>
+        <span class="ht-line ht-red" id="htLine2">DIE VERKOOPT</span>
+      </h1>
+      <p class="hero-sub" id="heroSub">
+        AI als fundament. Menselijke connectie.<br />
+        Van product visual tot storytelling — wij zetten merken in beweging.
+      </p>
+      <div class="hero-actions" id="heroActions">
+        <a href="#contact" class="btn-primary">
+          <span>Plan kennismaking</span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="#werk" class="btn-ghost">Bekijk werk</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="hs-line"></div>
+      <span>scroll</span>
+    </div>
+
+    <!-- corner marks -->
+    <div class="corner-mark corner-tl"></div>
+    <div class="corner-mark corner-tr"></div>
+    <div class="corner-mark corner-br"></div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <div class="marquee-inner" id="marqueeInner">
+        <span>Product Visuals</span><span class="sep">—</span>
+        <span>Motion Graphics</span><span class="sep">—</span>
+        <span>AI Systemen</span><span class="sep">—</span>
+        <span>Short Form</span><span class="sep">—</span>
+        <span>Storytelling</span><span class="sep">—</span>
+        <span>Content Marketing</span><span class="sep">—</span>
+        <span>Websites</span><span class="sep">—</span>
+        <span>Product Visuals</span><span class="sep">—</span>
+        <span>Motion Graphics</span><span class="sep">—</span>
+        <span>AI Systemen</span><span class="sep">—</span>
+        <span>Short Form</span><span class="sep">—</span>
+        <span>Storytelling</span><span class="sep">—</span>
+        <span>Content Marketing</span><span class="sep">—</span>
+        <span>Websites</span><span class="sep">—</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ OVER ═══════════════ -->
+  <section id="over" class="section over-section">
+    <div class="diag-bar db-over-1"></div>
+    <div class="diag-bar db-over-2"></div>
+    <div class="container">
+      <div class="over-grid">
+        <div class="over-left">
+          <div class="s-label reveal-up">Over IBE Motion Studio</div>
+          <h2 class="s-title reveal-up" data-delay="100">
+            AI als fundament.<br /><em class="red-em">Jij als verbinding.</em>
+          </h2>
+          <p class="s-body reveal-up" data-delay="200">
+            IBE Motion Studio is een jong, scherp motion design studio dat AI niet als hulpmiddel ziet — maar als fundament. Elke workflow, elk systeem, elk stuk content is gebouwd op slimme automatisering.
+          </p>
+          <p class="s-body reveal-up" data-delay="280">
+            Maar technologie vertelt geen verhalen. Mensen doen dat. Daarom blijft de verbinding met klanten altijd menselijk: een gesprek, een idee, een samenwerking die verder gaat dan een render.
+          </p>
+
+          <div class="over-stats reveal-up" data-delay="360">
+            <div class="ostat">
+              <div class="ostat-num" data-target="2">0</div>
+              <div class="ostat-label">Jaar actief</div>
+            </div>
+            <div class="ostat-div"></div>
+            <div class="ostat">
+              <div class="ostat-num" data-target="6">0</div>
+              <div class="ostat-label">Specialisaties</div>
+            </div>
+            <div class="ostat-div"></div>
+            <div class="ostat">
+              <div class="ostat-num" data-target="100">0</div>
+              <div class="ostat-label">% AI-gedreven</div>
+            </div>
+          </div>
+
+          <div class="tools-row reveal-up" data-delay="440">
+            <span class="tool-tag">After Effects</span>
+            <span class="tool-tag">Premiere Pro</span>
+            <span class="tool-tag">Higgsfield AI</span>
+            <span class="tool-tag">Illustrator</span>
+            <span class="tool-tag">Claude AI</span>
+          </div>
+        </div>
+
+        <div class="over-right reveal-right">
+          <div class="over-visual-wrap">
+            <canvas id="overCanvas"></canvas>
+            <div class="ov-corner ov-tl"></div>
+            <div class="ov-corner ov-br"></div>
+            <div class="ov-label">IBE MOTION STUDIO</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ DIENSTEN ═══════════════ -->
+  <section id="diensten" class="section diensten-section">
+    <div class="container">
+      <div class="s-header reveal-up">
+        <div class="s-label">Wat ik maak</div>
+        <h2 class="s-title">Diensten</h2>
+        <p class="s-intro">Van eerste concept tot gepubliceerde content — alles onder één dak.</p>
+      </div>
+      <div class="diensten-grid">
+
+        <div class="dienst-card reveal-up" data-delay="0">
+          <div class="dc-num">01</div>
+          <div class="dc-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 32V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M8 8l24 12L8 32" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="32" cy="20" r="4" fill="currentColor" opacity="0.3"/>
+            </svg>
+          </div>
+          <h3>Product Visuals</h3>
+          <p>Cinematic renders en motion visuals die jouw product laten zien zoals het verdient. Gemaakt voor e-commerce, ads en social.</p>
+          <div class="dc-bar"></div>
+        </div>
+
+        <div class="dienst-card reveal-up" data-delay="80">
+          <div class="dc-num">02</div>
+          <div class="dc-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="4" y="6" width="32" height="28" rx="2" stroke="currentColor" stroke-width="2"/>
+              <path d="M4 14h32" stroke="currentColor" stroke-width="2"/>
+              <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+              <circle cx="16" cy="10" r="1.5" fill="currentColor" opacity="0.4"/>
+              <path d="M10 22h20M10 28h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Content Marketing</h3>
+          <p>Strategische content die niet alleen mooi oogt maar ook converteert. Van contentstrategie tot publicatie-planning.</p>
+          <div class="dc-bar"></div>
+        </div>
+
+        <div class="dienst-card reveal-up" data-delay="160">
+          <div class="dc-num">03</div>
+          <div class="dc-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="2"/>
+              <path d="M20 8v12l8 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M6 20h4M30 20h4M20 6v4M20 30v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+          </div>
+          <h3>AI Systemen</h3>
+          <p>Slimme content pipelines die je productie versnellen zonder kwaliteit in te leveren. Automatiseer het herhaalbare.</p>
+          <div class="dc-bar"></div>
+        </div>
+
+        <div class="dienst-card reveal-up" data-delay="240">
+          <div class="dc-num">04</div>
+          <div class="dc-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M6 30L20 6l14 24H6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M6 30h28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="20" cy="30" r="2.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Storytelling</h3>
+          <p>Verhalen die blijven hangen. Van scriptconcepten tot visuele narratieven — jouw merk uniek verteld op een manier die mensen raakt.</p>
+          <div class="dc-bar"></div>
+        </div>
+
+        <div class="dienst-card reveal-up" data-delay="320">
+          <div class="dc-num">05</div>
+          <div class="dc-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="6" y="10" width="28" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 20l8 0M12 20l2 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M14 32v2M26 32v2M10 34h20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+            </svg>
+          </div>
+          <h3>Short Form Content</h3>
+          <p>Reels, TikToks en Shorts die mensen stoppen met scrollen. Gebouwd voor algoritmes, gemaakt voor mensen.</p>
+          <div class="dc-bar"></div>
+        </div>
+
+        <div class="dienst-card reveal-up" data-delay="400">
+          <div class="dc-num">06</div>
+          <div class="dc-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="4" y="4" width="32" height="26" rx="2" stroke="currentColor" stroke-width="2"/>
+              <path d="M4 34h32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M14 30l-4 4M26 30l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+              <path d="M12 18l5 5 10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Websites</h3>
+          <p>High-performance websites met karakter. Ontworpen om te imponeren en te converteren — zoals deze pagina.</p>
+          <div class="dc-bar"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PARALLAX QUOTE ═══════════════ -->
+  <div class="parallax-quote" id="parallaxQuote">
+    <canvas id="quoteCanvas"></canvas>
+    <div class="pq-inner">
+      <div class="pq-line" data-speed="-0.15">FRAME EVERY</div>
+      <div class="pq-line pq-red" data-speed="-0.25">MOMENT</div>
+      <div class="pq-line pq-outline" data-speed="-0.1">WITH INTENT</div>
+    </div>
+    <div class="pq-diag-1"></div>
+    <div class="pq-diag-2"></div>
+  </div>
+
+  <!-- ═══════════════ PRIJZEN ═══════════════ -->
+  <section id="prijzen" class="section prijzen-section">
+    <div class="diag-bar db-prijs"></div>
+    <div class="container">
+      <div class="s-header reveal-up">
+        <div class="s-label">Investering</div>
+        <h2 class="s-title">Transparante prijzen</h2>
+        <p class="s-intro">Geen verrassingen. Altijd helder wat het kost — en wat je terugkrijgt.</p>
+      </div>
+      <div class="prijzen-grid">
+        <div class="prijs-card reveal-up" data-delay="0">
+          <div class="pc-label">Starter</div>
+          <div class="pc-price">Op aanvraag</div>
+          <div class="pc-sub">Eenmalig project of eerste samenwerking</div>
+          <div class="pc-divider"></div>
+          <ul class="pc-list">
+            <li>1 video of contentreeks</li>
+            <li>2 revisierondes</li>
+            <li>Levering op deadline</li>
+            <li>Persoonlijke begeleiding</li>
+          </ul>
+          <a href="#contact" class="btn-ghost full">Start gesprek</a>
+        </div>
+        <div class="prijs-card featured reveal-up" data-delay="120">
+          <div class="pc-badge">Populair</div>
+          <div class="pc-label">Maandelijks</div>
+          <div class="pc-price">Retainer</div>
+          <div class="pc-sub">Doorlopende content voor groeiende merken</div>
+          <div class="pc-divider"></div>
+          <ul class="pc-list">
+            <li>Wekelijkse contentproductie</li>
+            <li>Strategie + kalender</li>
+            <li>AI-workflow op maat</li>
+            <li>Prioriteit & directe lijn</li>
+            <li>Maandelijkse evaluatie</li>
+          </ul>
+          <a href="#contact" class="btn-primary full">Plan kennismaking</a>
+        </div>
+        <div class="prijs-card reveal-up" data-delay="240">
+          <div class="pc-label">Custom</div>
+          <div class="pc-price">Maatwerk</div>
+          <div class="pc-sub">Voor grotere projecten of unieke wensen</div>
+          <div class="pc-divider"></div>
+          <ul class="pc-list">
+            <li>Volledige brand motion kit</li>
+            <li>AI-contentpipeline setup</li>
+            <li>Website + content combo</li>
+            <li>Team training mogelijk</li>
+          </ul>
+          <a href="#contact" class="btn-ghost full">Neem contact op</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ WERK ═══════════════ -->
+  <section id="werk" class="section werk-section">
+    <div class="container">
+      <div class="s-header reveal-up">
+        <div class="s-label">Portfolio</div>
+        <h2 class="s-title">Geselecteerd werk</h2>
+        <p class="s-intro">Een greep uit recente projecten en samenwerkingen.</p>
+      </div>
+      <div class="werk-grid">
+
+        <div class="werk-item wi-large reveal-up" data-delay="0">
+          <div class="wi-inner">
+            <canvas class="wi-canvas" data-hue="0" data-index="0"></canvas>
+            <div class="wi-overlay">
+              <div class="wi-cat">Branding · Motion</div>
+              <h4>RYHFF</h4>
+              <p>Brand identity & motion graphics voor een groeiend lifestyle merk.</p>
+              <span class="wi-view">Bekijk project →</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="werk-item reveal-up" data-delay="100">
+          <div class="wi-inner">
+            <canvas class="wi-canvas" data-hue="1" data-index="1"></canvas>
+            <div class="wi-overlay">
+              <div class="wi-cat">Content · AI</div>
+              <h4>Tuinbazen</h4>
+              <p>Social content strategie en short form video voor een toonaangevend tuiniersbedrijf.</p>
+              <span class="wi-view">Bekijk project →</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="werk-item reveal-up" data-delay="200">
+          <div class="wi-inner">
+            <canvas class="wi-canvas" data-hue="2" data-index="2"></canvas>
+            <div class="wi-overlay">
+              <div class="wi-cat">Product · Visual</div>
+              <h4>Product Renders</h4>
+              <p>Cinematic product renders voor e-commerce en advertenties.</p>
+              <span class="wi-view">Bekijk project →</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="werk-item reveal-up" data-delay="300">
+          <div class="wi-inner">
+            <canvas class="wi-canvas" data-hue="3" data-index="3"></canvas>
+            <div class="wi-overlay">
+              <div class="wi-cat">Short Form · Reels</div>
+              <h4>Social Reels</h4>
+              <p>Scroll-stoppende short form content voor meerdere platformen.</p>
+              <span class="wi-view">Bekijk project →</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="werk-note reveal-up">
+        <p>Meer cases beschikbaar tijdens een kennismakingsgesprek.</p>
+        <a href="#contact" class="btn-ghost">Plan gesprek →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CTA STRIP ═══════════════ -->
+  <section class="cta-strip">
+    <canvas id="ctaCanvas"></canvas>
+    <div class="cta-diag-1"></div>
+    <div class="cta-diag-2"></div>
+    <div class="cta-inner reveal-up">
+      <div class="cta-label">Klaar om te starten?</div>
+      <h2 class="cta-title">Zet jouw merk<br /><span class="red-em">in beweging.</span></h2>
+      <p>Plan een gratis kennismakingsgesprek via Zoom — 30 minuten, geen verplichtingen.</p>
+      <a href="#contact" class="btn-primary large">
+        <span>Plan jouw gesprek</span>
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <section id="contact" class="section contact-section">
+    <div class="diag-bar db-contact"></div>
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left reveal-left">
+          <div class="s-label">Contact</div>
+          <h2 class="s-title">Let's talk.</h2>
+          <p class="s-body">
+            Heb je een project, een idee, of ben je gewoon benieuwd wat IBE Motion Studio voor jou kan betekenen? Plan een gratis Zoom-call — 30 minuten om te verkennen of we matchen.
+          </p>
+          <div class="contact-links">
+            <a href="ibemotionmedia@gmail.com" class="c-link">
+              <div class="c-link-icon">
+                <svg viewBox="0 0 20 20" fill="none"><path d="M2 5.5l8 5 8-5M2 5.5h16v11a1 1 0 01-1 1H3a1 1 0 01-1-1V5.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span>ibemotionmedia@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/company/ibe-motion-studio/" target="_blank" rel="noopener" class="c-link">
+              <div class="c-link-icon">
+                <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M6 8v7M6 5.5v.01M9.5 15v-4c0-1 .8-1.5 1.5-1.5s1.5.5 1.5 1.5v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+          <div class="zoom-pill">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M8 8v8l4-3 4 3V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Kennismaking via Zoom · 30 min · Gratis</span>
+          </div>
+        </div>
+        <div class="contact-right reveal-right">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="fg">
+              <label for="naam">Naam *</label>
+              <input type="text" id="naam" name="naam" placeholder="Jouw naam" autocomplete="name" required />
+              <span class="ferr" id="naamErr">Vul je naam in.</span>
+            </div>
+            <div class="fg">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email" placeholder="jouw@email.nl" autocomplete="email" required />
+              <span class="ferr" id="emailErr">Vul een geldig e-mailadres in.</span>
+            </div>
+            <div class="fg">
+              <label for="bedrijf">Bedrijf / Project</label>
+              <input type="text" id="bedrijf" name="bedrijf" placeholder="Optioneel" autocomplete="organization" />
+            </div>
+            <div class="fg">
+              <label for="dienst">Dienst</label>
+              <select id="dienst" name="dienst">
+                <option value="">Selecteer een dienst</option>
+                <option value="product-visuals">Product Visuals</option>
+                <option value="content-marketing">Content Marketing</option>
+                <option value="ai-systemen">AI Systemen</option>
+                <option value="storytelling">Storytelling</option>
+                <option value="short-form">Short Form Content</option>
+                <option value="website">Website</option>
+                <option value="anders">Anders / Combinatie</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="bericht">Bericht *</label>
+              <textarea id="bericht" name="bericht" placeholder="Wat wil je aanpakken?" rows="4" required></textarea>
+              <span class="ferr" id="berichtErr">Schrijf een kort berichtje.</span>
+            </div>
+            <button type="submit" class="btn-primary full" id="submitBtn">
+              <span class="btn-text">Verstuur aanvraag</span>
+              <span class="btn-success hidden">Verstuurd ✓</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer">
+    <div class="footer-diag-1"></div>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo footer-logo-link">
+            <img src="IBEMOTION-logo.png" alt="IBE Motion Studio" class="footer-logo-img" />
+            <div class="nav-logo-text">
+              <span class="nl-ibe">IBE</span>
+              <span class="nl-motion">MOTION STUDIO</span>
+            </div>
+          </a>
+          <p class="footer-tagline">AI als fundament.<br />Menselijke connectie.</p>
+          <div class="footer-socials">
+            <a href="mailto:ibemotionmedia@gmail.com" class="fsoc" aria-label="Email">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M2 5.5l8 5 8-5M2 5.5h16v11H2V5.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="https://linkedin.com/company/ibemotionstudio" target="_blank" rel="noopener" class="fsoc" aria-label="LinkedIn">
+              <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M6 8v7M6 5.5v.01M9.5 15v-4c0-1 .8-1.5 1.5-1.5s1.5.5 1.5 1.5v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-nav-cols">
+          <div class="fnc">
+            <h5>Navigatie</h5>
+            <a href="#over">Over</a>
+            <a href="#diensten">Diensten</a>
+            <a href="#prijzen">Prijzen</a>
+            <a href="#werk">Werk</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="fnc">
+            <h5>Diensten</h5>
+            <a href="#diensten">Product Visuals</a>
+            <a href="#diensten">Content Marketing</a>
+            <a href="#diensten">AI Systemen</a>
+            <a href="#diensten">Short Form</a>
+            <a href="#diensten">Storytelling</a>
+          </div>
+          <div class="fnc">
+            <h5>Contact</h5>
+            <a href="mailto:ibemotionmedia@gmail.com">ibemotionmedia@gmail.com</a>
+            <a href="https://linkedin.com/company/ibemotionstudio" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="#contact" class="fcta">Plan Zoom call →</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 IBE Motion Studio — Alle rechten voorbehouden — Landgraaf, Limburg</span>
+        <span>Gebouwd met AI · Ontworpen met intentie</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
