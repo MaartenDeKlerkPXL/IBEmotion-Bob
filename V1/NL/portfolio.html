@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#0A0A0A"/>
+  <link rel="icon" type="image/png" href="../IBEMOTION-logo-NO-BG-TEXT.png"/>
+  <title>Portfolio — IBE Motion Studio</title>
+  <meta name="description" content="Bekijk het werk van IBE Motion Studio — motion design, product visuals, short form content en AI-gedreven projecten."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;900&family=Barlow:wght@300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="loader"><div class="loader-wrap"><img src="../IBEMOTION-logo-NO-BG.png" alt="IBE Motion" class="loader-logo"/><div class="loader-bar-bg"><div id="loader-bar"></div></div><div class="loader-txt">LADEN</div></div></div>
+<div id="cur-ring"></div><div id="cur-dot"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="../IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio" class="nav-logo-img"/></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link" data-scramble>Home</a></li>
+      <li><a href="diensten.html" class="nav-link" data-scramble>Diensten</a></li>
+      <li><a href="portfolio.html" class="nav-link active" data-scramble>Portfolio</a></li>
+      <li><a href="contact.html" class="nav-link" data-scramble>Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-lang"><a href="portfolio.html" class="lang-btn active">NL</a><a href="../EN/portfolio.html" class="lang-btn">EN</a></div>
+      <a href="contact.html" class="nav-cta">Kennismaking</a>
+    </div>
+    <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mob-menu" id="mob-menu">
+    <a href="index.html" class="mob-link">Home</a>
+    <a href="diensten.html" class="mob-link">Diensten</a>
+    <a href="portfolio.html" class="mob-link">Portfolio</a>
+    <a href="contact.html" class="mob-link">Contact</a>
+    <div class="mob-lang"><a href="portfolio.html" class="active">NL</a><a href="../EN/portfolio.html">EN</a></div>
+    <a href="contact.html" class="mob-cta">Kennismaking plannen →</a>
+  </div>
+</nav>
+
+<div class="page-hero" style="position:relative;">
+  <canvas class="ambient-canvas"></canvas>
+  <div class="dbar" style="width:220px;height:9px;background:rgba(212,43,43,.12);top:90px;right:60px;"></div>
+  <div class="page-hero-inner" style="position:relative;z-index:1;">
+    <div class="lbl rv rv-up">Portfolio</div>
+    <h1 class="h1 rv rv-up" data-delay="80">Geselecteerd<br/><span class="h-outline-red">werk.</span></h1>
+    <p class="body-l rv rv-up" data-delay="160" style="max-width:560px;margin-top:20px;">Een greep uit recente projecten en samenwerkingen. Meer beschikbaar tijdens een kennismakingsgesprek.</p>
+  </div>
+</div>
+
+<!-- PORTFOLIO GRID -->
+<section class="section">
+  <div class="container">
+
+    <!-- Filter bar -->
+    <div class="rv rv-up" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:48px;" id="filter-bar">
+      <button class="calc-item" style="padding:10px 20px;border:1px solid var(--border);background:var(--red);color:var(--ivory);" data-filter="all">Alles</button>
+      <button class="calc-item" style="padding:10px 20px;border:1px solid var(--border);" data-filter="motion">Motion</button>
+      <button class="calc-item" style="padding:10px 20px;border:1px solid var(--border);" data-filter="branding">Branding</button>
+      <button class="calc-item" style="padding:10px 20px;border:1px solid var(--border);" data-filter="content">Content</button>
+      <button class="calc-item" style="padding:10px 20px;border:1px solid var(--border);" data-filter="website">Website</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolio-grid">
+
+      <!-- RYHFF -->
+      <div class="port-item rv rv-up" data-delay="0" data-category="branding motion">
+        <div class="port-item-inner">
+          <canvas class="port-canvas" data-hue="0"></canvas>
+          <div class="port-overlay">
+            <div class="port-cat">Branding · Motion</div>
+            <h4>RYHFF</h4>
+            <p>Brand identity &amp; motion graphics voor een groeiend lifestyle merk.</p>
+            <a href="#" class="port-link" data-project="ryhff">Bekijk project →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tuinbazen -->
+      <div class="port-item rv rv-up" data-delay="80" data-category="content">
+        <div class="port-item-inner">
+          <canvas class="port-canvas" data-hue="1"></canvas>
+          <div class="port-overlay">
+            <div class="port-cat">Content · Short Form</div>
+            <h4>Tuinbazen</h4>
+            <p>Social content strategie en short form video voor een toonaangevend tuiniersbedrijf.</p>
+            <a href="#" class="port-link" data-project="tuinbazen">Bekijk project →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Renders -->
+      <div class="port-item rv rv-up" data-delay="160" data-category="motion">
+        <div class="port-item-inner">
+          <canvas class="port-canvas" data-hue="2"></canvas>
+          <div class="port-overlay">
+            <div class="port-cat">Product · Motion</div>
+            <h4>Product Renders</h4>
+            <p>Cinematic product renders voor e-commerce en advertentiecampagnes.</p>
+            <a href="#" class="port-link" data-project="product-renders">Bekijk project →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Reels -->
+      <div class="port-item rv rv-up" data-delay="240" data-category="content">
+        <div class="port-item-inner">
+          <canvas class="port-canvas" data-hue="3"></canvas>
+          <div class="port-overlay">
+            <div class="port-cat">Short Form · Reels</div>
+            <h4>Social Reels</h4>
+            <p>Scroll-stoppende short form content voor meerdere platformen en merken.</p>
+            <a href="#" class="port-link" data-project="social-reels">Bekijk project →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- IBE Website -->
+      <div class="port-item rv rv-up" data-delay="320" data-category="website">
+        <div class="port-item-inner">
+          <canvas class="port-canvas" data-hue="4"></canvas>
+          <div class="port-overlay">
+            <div class="port-cat">Website · Design</div>
+            <h4>IBE Motion Studio</h4>
+            <p>Deze website — custom gebouwd, zero templates, Three.js 3D particle wave.</p>
+            <a href="#" class="port-link" data-project="ibe-website">Bekijk project →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coming soon slots -->
+      <div class="port-coming rv rv-up" data-delay="400">
+        <div class="port-coming-label">Binnenkort</div>
+        <h4>Project<br/>toegevoegd</h4>
+      </div>
+
+    </div>
+
+    <div class="rv rv-up" style="margin-top:56px;padding-top:40px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+      <p class="body-m">Meer projecten en case studies zijn beschikbaar op aanvraag.</p>
+      <a href="contact.html" class="btn btn-ghost">Plan een gesprek →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECT MODAL -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Sluiten">✕</button>
+    <div class="modal-img">
+      <img class="modal-img-el" src="" alt="" style="display:none;"/>
+      <canvas class="modal-canvas" style="width:100%;height:100%;display:block;"></canvas>
+    </div>
+    <div class="modal-body">
+      <div class="modal-cat"></div>
+      <div class="modal-title"></div>
+      <p class="modal-desc"></p>
+      <div class="modal-tags"></div>
+      <a href="contact.html" class="btn btn-red" style="margin-top:28px;display:inline-flex;"><span>Vergelijkbaar project bespreken</span><span class="arr">→</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="section" style="background:var(--red);position:relative;overflow:hidden;text-align:center;">
+  <div class="dbar" style="width:280px;height:12px;background:rgba(10,10,10,.25);top:20px;left:-50px;"></div>
+  <div class="container rv rv-up" style="max-width:680px;">
+    <div class="lbl" style="color:rgba(247,246,242,.6);">Volgende stap</div>
+    <h2 class="h2" style="color:var(--ivory);margin-bottom:18px;">Iets vergelijkbaars<br/>in gedachten?</h2>
+    <p style="font-size:17px;font-weight:300;color:rgba(247,246,242,.75);line-height:1.75;margin-bottom:40px;">Plan een gratis gesprek — dan kijken we wat we samen kunnen maken.</p>
+    <a href="contact.html" class="btn btn-red lg" style="background:var(--ivory);color:var(--black);border-color:var(--ivory);"><span>Plan kennismaking</span><span class="arr">→</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="dbar" style="width:260px;height:10px;background:rgba(212,43,43,.07);top:0;right:80px;"></div>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo"><img src="../IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio"/></a>
+        <p class="footer-tagline">AI als fundament.<br/>Menselijke connectie.</p>
+        <div class="footer-socials">
+          <a href="mailto:ibemotionmedia@gmail.com" class="fsoc">Mail</a>
+          <a href="https://linkedin.com/company/ibemotionstudio" target="_blank" rel="noopener" class="fsoc">LI</a>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div class="fcol"><h5>Navigatie</h5><a href="index.html">Home</a><a href="diensten.html">Diensten</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a></div>
+        <div class="fcol"><h5>Diensten</h5><a href="diensten.html#product-visuals">Product Visuals</a><a href="diensten.html#content-marketing">Content Marketing</a><a href="diensten.html#ai-systemen">AI Systemen</a><a href="diensten.html#short-form">Short Form</a><a href="diensten.html#websites">Websites</a></div>
+        <div class="fcol"><h5>Contact</h5><a href="mailto:ibemotionmedia@gmail.com">ibemotionmedia@gmail.com</a><a href="https://linkedin.com/company/ibemotionstudio" target="_blank" rel="noopener">LinkedIn</a><a href="contact.html" class="red-link">Plan Zoom call →</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 IBE Motion Studio — Landgraaf, Limburg</span>
+      <span>Gemaakt door <a href="https://portfolio-maartendeklerk.netlify.app/" target="_blank" rel="noopener">Maarten de Klerk</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scroll-top" aria-label="Terug naar boven">↑</button>
+
+<!-- Project data -->
+<script>
+window.PROJECTS = {
+  'ryhff': {cat:'Branding · Motion',title:'RYHFF',desc:'RYHFF is een groeiend lifestyle merk waarvoor IBE Motion Studio de volledige brand identity in beweging heeft gezet. Van logo-animaties tot social content — alles consistent, scherp en herkenbaar. Het project omvatte een complete motion guideline, waarmee het merk zelf verder kan bouwen op het visuele systeem.',tags:['Brand Motion','Logo Animatie','Social Content','Motion Guideline']},
+  'tuinbazen': {cat:'Content · Short Form',title:'Tuinbazen',desc:'Voor Tuinbazen — een toonaangevend tuiniersbedrijf — heeft IBE Motion Studio een structurele social content aanpak opgezet. Van contentstrategie en publicatiekalender tot batch-productie van Reels en korte video\'s. Resultaat: consistente wekelijkse output zonder dat het team er zelf uren aan kwijt is.',tags:['Short Form','Contentstrategie','Reels','Batch Productie']},
+  'product-renders': {cat:'Product · Motion',title:'Product Renders',desc:'Cinematic product renders die producten laten zien zoals ze verdienen te worden gezien. Gemaakt voor advertenties op Meta en Google, product pages en social media. Elke render is geoptimaliseerd voor het platform waarop het verschijnt — qua format, sfeer en call-to-action.',tags:['Product Render','Motion Visual','Advertentie','E-commerce']},
+  'social-reels': {cat:'Short Form · Reels',title:'Social Reels',desc:'Een reeks scroll-stoppende short form video\'s voor meerdere merken. Visueel sterk, inhoudelijk scherp, algoritmisch geoptimaliseerd. Elk stuk content is gemaakt met een duidelijke hook in de eerste seconde — want dat is waar het begint of eindigt.',tags:['Reels','TikTok','Shorts','Motion']},
+  'ibe-website': {cat:'Website · Design',title:'IBE Motion Studio Website',desc:'Deze website is gebouwd door IBE Motion Studio zelf — als bewijs dat we niet alleen content maken maar ook bouwen. Custom HTML, CSS en vanilla JavaScript. Three.js particle wave hero die reageert op muisbewegingen. Geen frameworks, geen templates. Precies zoals we het voor klanten doen.',tags:['Website','Three.js','Motion Design','Frontend Development']}
+};
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+<script>
+/* Portfolio filter */
+(function(){
+  var btns=document.querySelectorAll('[data-filter]');
+  var items=document.querySelectorAll('.port-item[data-category]');
+  btns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      btns.forEach(function(b){b.style.background='';b.style.color='';});
+      btn.style.background='var(--red)';btn.style.color='var(--ivory)';
+      var f=btn.dataset.filter;
+      items.forEach(function(item){
+        if(f==='all'||item.dataset.category.includes(f)){
+          item.style.display='';
+          item.style.animation='fadeIn .4s var(--ease)';
+        } else {
+          item.style.display='none';
+        }
+      });
+    });
+  });
+})();
+/* Modal canvas */
+(function(){
+  var overlay=document.getElementById('modal-overlay');
+  if(!overlay||typeof THREE==='undefined')return;
+  var canvas=overlay.querySelector('.modal-canvas');
+  if(!canvas)return;
+  var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:false,alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,1.2));
+  var W=canvas.parentElement.offsetWidth||800,H=Math.round(W*9/16);
+  renderer.setSize(W,H);
+  var scene=new THREE.Scene();
+  var camera=new THREE.PerspectiveCamera(60,W/H,.1,100);
+  camera.position.z=10;
+  var rl=new THREE.PointLight(0xD42B2B,3,20);rl.position.set(3,2,4);scene.add(rl);
+  scene.add(new THREE.AmbientLight(0x0A0A0A,.5));
+  var cnt=800,geo=new THREE.BufferGeometry(),pos=new Float32Array(cnt*3);
+  for(var i=0;i<cnt;i++){pos[i*3]=(i%32-16)*.5;pos[i*3+1]=(Math.floor(i/32)-12)*.5;pos[i*3+2]=0;}
+  geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  scene.add(new THREE.Points(geo,new THREE.PointsMaterial({color:0xD42B2B,size:.055,transparent:true,opacity:.7,blending:THREE.AdditiveBlending})));
+  var clk=new THREE.Clock();
+  (function a(){requestAnimationFrame(a);var t=clk.getElapsedTime();var p=geo.attributes.position.array;
+    for(var r=0;r<25;r++)for(var c=0;c<32;c++){var pi=r*32+c;p[pi*3+2]=Math.sin(p[pi*3]*.4+t*.7)*Math.cos(p[pi*3+1]*.4+t*.5)*2;}
+    geo.attributes.position.needsUpdate=true;rl.position.x=Math.sin(t*.6)*4;renderer.render(scene,camera);
+  })();
+})();
+</script>
+</body>
+</html>

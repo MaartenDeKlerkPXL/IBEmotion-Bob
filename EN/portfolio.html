@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — IBE Motion Studio</title>
+<meta name="description" content="Work by IBE Motion Studio: branding, motion, 3D renders, content and websites for a range of clients in Limburg and beyond.">
+<link rel="icon" type="image/png" href="../assets/IBEMOTION-logo-NO-BG-TEXT.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div id="loader">
+  <img class="loader-logo" src="../assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio">
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-count"><b>0</b> / 100</div>
+</div>
+
+<div id="cursor-ring"></div>
+<div id="cursor-dot"></div>
+<div class="vignette"></div>
+
+<nav aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="IBE Motion Studio — home">
+    <img src="../assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="diensten.html">Services</a></li>
+    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="contact.html" class="btn btn-primary nav-cta">Get in touch</a>
+    <div class="nav-lang">
+      <a href="../portfolio.html" class="lang-btn">NL</a>
+      <a href="portfolio.html" class="lang-btn active">EN</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="index.html"><span class="idx">01</span>Home</a></li>
+    <li><a href="diensten.html"><span class="idx">02</span>Services</a></li>
+    <li><a href="portfolio.html"><span class="idx">03</span>Portfolio</a></li>
+    <li><a href="contact.html"><span class="idx">04</span>Contact</a></li>
+  </ul>
+  <div class="mm-foot"><a href="../portfolio.html">Nederlands</a><span>hello@ibemotionstudio.nl</span><span>Landgraaf, NL</span></div>
+</div>
+
+<!-- ════════ PAGE HERO ════════ -->
+<header class="page-hero">
+  <canvas id="page-hero-canvas" class="page-hero-canvas" aria-hidden="true"></canvas>
+  <div class="page-hero-veil"></div>
+  <div class="page-hero-inner">
+    <div class="page-idx page-hero-eyebrow"><span>Our work</span><span class="sep">/</span><span>Selection</span></div>
+    <h1 class="page-hero-title"><span class="mask"><span>Portfolio.</span></span></h1>
+    <p class="page-hero-sub rv-up" data-delay="0.3">A selection of projects. Hover over a case for the details, click to see the whole story.</p>
+  </div>
+</header>
+
+<!-- ════════ CONTROLS ════════ -->
+<div class="pf-controls">
+  <div class="pf-filters" role="tablist" aria-label="Filter portfolio">
+    <button class="pf-filter active" data-filter="all" role="tab" aria-selected="true">All</button>
+    <button class="pf-filter" data-filter="motion" role="tab" aria-selected="false">Motion</button>
+    <button class="pf-filter" data-filter="branding" role="tab" aria-selected="false">Branding</button>
+    <button class="pf-filter" data-filter="content" role="tab" aria-selected="false">Content</button>
+    <button class="pf-filter" data-filter="website" role="tab" aria-selected="false">Website</button>
+  </div>
+  <p class="pf-count"><b id="pf-shown">6</b> / 6 projects</p>
+</div>
+
+<!-- ════════ GRID ════════ -->
+<div class="pf-grid" id="pf-grid">
+  <article class="pf-card rv-up" data-cat="branding motion" data-modal="0" data-cursor="view" tabindex="0" role="button" aria-label="View RYHFF">
+    <canvas id="pf-canvas-0" class="pf-canvas" aria-hidden="true"></canvas>
+    <div class="pf-card-grad"></div><span class="pf-no">01</span>
+    <div class="pf-overlay">
+      <span class="pf-cat">Branding · Motion</span><h3 class="pf-name">RYHFF</h3>
+      <p class="pf-desc">Full rebrand for emerging Limburg talent. Identity, motion and release visuals.</p>
+      <div class="pf-meta"><span class="tag">Branding</span><span class="tag">Motion</span></div>
+    </div>
+  </article>
+  <article class="pf-card rv-up" data-delay="0.05" data-cat="content" data-modal="1" data-cursor="view" tabindex="0" role="button" aria-label="View Tuinbazen">
+    <canvas id="pf-canvas-1" class="pf-canvas" aria-hidden="true"></canvas>
+    <div class="pf-card-grad"></div><span class="pf-no">02</span>
+    <div class="pf-overlay">
+      <span class="pf-cat">Content Marketing</span><h3 class="pf-name">Tuinbazen</h3>
+      <p class="pf-desc">Monthly social content for a landscaping company. Organic reach +340%.</p>
+      <div class="pf-meta"><span class="tag">Social</span><span class="tag">Animation</span></div>
+    </div>
+  </article>
+  <article class="pf-card rv-up" data-delay="0.1" data-cat="motion" data-modal="2" data-cursor="view" tabindex="0" role="button" aria-label="View Aurora Renders">
+    <canvas id="pf-canvas-2" class="pf-canvas" aria-hidden="true"></canvas>
+    <div class="pf-card-grad"></div><span class="pf-no">03</span>
+    <div class="pf-overlay">
+      <span class="pf-cat">Motion · 3D</span><h3 class="pf-name">Aurora Renders</h3>
+      <p class="pf-desc">Photorealistic 3D product animations for a cosmetics brand. Conversion +28%.</p>
+      <div class="pf-meta"><span class="tag">3D</span><span class="tag">Render</span></div>
+    </div>
+  </article>
+  <article class="pf-card rv-up" data-delay="0.15" data-cat="content" data-modal="3" data-cursor="view" tabindex="0" role="button" aria-label="View Pulse Reels">
+    <canvas id="pf-canvas-3" class="pf-canvas" aria-hidden="true"></canvas>
+    <div class="pf-card-grad"></div><span class="pf-no">04</span>
+    <div class="pf-overlay">
+      <span class="pf-cat">Short Form</span><h3 class="pf-name">Pulse Reels</h3>
+      <p class="pf-desc">24 Reels a month for a gym. An average of 45K views per video.</p>
+      <div class="pf-meta"><span class="tag">Reels</span><span class="tag">Edit</span></div>
+    </div>
+  </article>
+  <article class="pf-card rv-up" data-delay="0.2" data-cat="branding" data-modal="4" data-cursor="view" tabindex="0" role="button" aria-label="View Nova Identity">
+    <canvas id="pf-canvas-4" class="pf-canvas" aria-hidden="true"></canvas>
+    <div class="pf-card-grad"></div><span class="pf-no">05</span>
+    <div class="pf-overlay">
+      <span class="pf-cat">Branding</span><h3 class="pf-name">Nova Identity</h3>
+      <p class="pf-desc">Brand identity for a tech startup. Logo, system and animated brand kit.</p>
+      <div class="pf-meta"><span class="tag">Identity</span><span class="tag">Logo</span></div>
+    </div>
+  </article>
+  <article class="pf-card rv-up" data-delay="0.25" data-cat="website motion" data-modal="5" data-cursor="view" tabindex="0" role="button" aria-label="View IBE Website">
+    <canvas id="pf-canvas-5" class="pf-canvas" aria-hidden="true"></canvas>
+    <div class="pf-card-grad"></div><span class="pf-no">06</span>
+    <div class="pf-overlay">
+      <span class="pf-cat">Website</span><h3 class="pf-name">IBE Website</h3>
+      <p class="pf-desc">This site. Vanilla HTML/CSS/JS with Three.js for maximum performance.</p>
+      <div class="pf-meta"><span class="tag">Three.js</span><span class="tag">WebGL</span></div>
+    </div>
+  </article>
+</div>
+
+<!-- ════════ MODAL ════════ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-scrim" data-close></div>
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    <div class="modal-canvas-wrap"><canvas id="modal-canvas" class="modal-canvas" aria-hidden="true"></canvas><div class="mc-grad"></div></div>
+    <div class="modal-body">
+      <span class="modal-cat" id="modal-cat">Category</span>
+      <h2 class="modal-title" id="modal-title">Project</h2>
+      <p class="modal-desc" id="modal-desc">Description</p>
+      <div class="modal-stats" id="modal-stats"></div>
+      <div class="modal-tags" id="modal-tags"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ CTA ════════ -->
+<section class="cta">
+  <canvas id="cta-canvas" class="cta-canvas" aria-hidden="true"></canvas>
+  <div class="cta-inner">
+    <span class="diag-bar" style="margin:0 auto 18px"></span>
+    <p class="section-label rv" style="justify-content:center;color:rgba(247,246,242,.7)">Your project here?</p>
+    <h2 class="section-title rv-up" data-delay="0.05">Let us put your<br>brand in motion.</h2>
+    <p class="cta-sub rv" data-delay="0.1">Book a free intro call and find out what IBE Motion Studio can do for you.</p>
+    <div class="cta-row rv-up" data-delay="0.15">
+      <a href="contact.html" class="btn btn-solid-ivory btn-lg">Free intro call <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="diensten.html" class="btn btn-outline btn-lg" style="border-color:rgba(247,246,242,.5)">Our services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img class="footer-logo" src="../assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio">
+      <p class="footer-desc">AI-first motion design studio in Landgraaf, the Netherlands. We put brands in motion.</p>
+      <div class="footer-socials">
+        <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-12h4v1.5A6 6 0 0116 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://tiktok.com" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-heading">Navigation</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li><li><a href="diensten.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Services</p>
+      <ul class="footer-links">
+        <li><a href="diensten.html#product-visuals">Product Visuals</a></li>
+        <li><a href="diensten.html#content-marketing">Content Marketing</a></li>
+        <li><a href="diensten.html#ai-systemen">AI Systems</a></li>
+        <li><a href="diensten.html#short-form">Short Form</a></li>
+        <li><a href="diensten.html#websites">Websites</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Contact</p>
+      <ul class="footer-links">
+        <li><a href="mailto:hello@ibemotionstudio.nl">hello@ibemotionstudio.nl</a></li>
+        <li><a href="tel:+31612345678">+31 6 12 34 56 78</a></li>
+        <li><a href="contact.html">Landgraaf, Netherlands</a></li>
+        <li><a href="../portfolio.html">Nederlandse versie</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 IBE Motion Studio · Landgraaf, Netherlands · CoC 98929879</p>
+    <a href="../portfolio.html" class="footer-copy footer-lang-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c-2.5 3-4 6.5-4 10s1.5 7 4 10M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10"/></svg>
+      Nederlands
+    </a>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Back to top">
+  <svg class="scroll-top-ring" viewBox="0 0 44 44">
+    <rect x="2" y="2" width="40" height="40" rx="3" class="ring-track"/>
+    <rect x="2" y="2" width="40" height="40" rx="3" class="ring-fill" id="scroll-ring-fill"/>
+  </svg>
+  <svg class="scroll-top-arrow" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<div id="toast-wrap"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="../script.js"></script>
+<script>
+(function () {
+  var PROJECTS = [
+    { cat:'Branding · Motion', title:'RYHFF', a:0x8B0000, b:0xD42B2B,
+      desc:'A complete brand identity for emerging Limburg talent. From logo and palette to motion templates for social and release visuals. One recognisable visual language that matches the energy of the artist.',
+      tags:['Branding','Motion Design','Social Templates','Logo'],
+      stats:[{v:'3',l:'Weeks'},{v:'+210',suf:'%',l:'Reach'},{v:'12',l:'Templates'}] },
+    { cat:'Content Marketing', title:'Tuinbazen', a:0x064e2e, b:0x22c55e,
+      desc:'Monthly content package for a landscaping company in Limburg. Animated before/after posts, seasonal campaigns and reviews in motion. In six months organic reach grew 340% and leads 80%.',
+      tags:['Content','Social Media','Animation','Instagram'],
+      stats:[{v:'+340',suf:'%',l:'Reach'},{v:'+80',suf:'%',l:'Leads'},{v:'6',l:'Months'}] },
+    { cat:'Motion · 3D', title:'Aurora Renders', a:0x083344, b:0x60a5fa,
+      desc:'Photorealistic 3D product animations for a cosmetics brand. Five hero products modelled and animated in three formats: square, landscape and vertical. Conversion on product pages rose 28%.',
+      tags:['3D Render','Product','Motion','E-commerce'],
+      stats:[{v:'+28',suf:'%',l:'Conversion'},{v:'5',l:'Products'},{v:'15',l:'Renders'}] },
+    { cat:'Short Form', title:'Pulse Reels', a:0x3b0764, b:0xc084fc,
+      desc:'Monthly package of 24 Reels for a gym. Each video hooks the viewer in the first two seconds with fast motion graphics and a clear call to action. An average of 45K views per video.',
+      tags:['Reels','TikTok','Motion Graphics','Fitness'],
+      stats:[{v:'45',suf:'K',l:'Avg views'},{v:'24',l:'Videos/mo'},{v:'48',suf:'h',l:'To peak'}] },
+    { cat:'Branding', title:'Nova Identity', a:0x7c2d12, b:0xf97316,
+      desc:'Brand identity for a tech startup. Logo, typographic system, colour and an animated brand kit for pitch decks and social. One consistent language across every touchpoint.',
+      tags:['Identity','Logo','Brand Kit','System'],
+      stats:[{v:'1',l:'System'},{v:'40',suf:'+',l:'Assets'},{v:'2',l:'Weeks'}] },
+    { cat:'Website', title:'IBE Website', a:0x8B0000, b:0xD42B2B,
+      desc:'The website you are looking at now. Built with pure vanilla HTML, CSS and JavaScript — no frameworks. Three.js r128 for the particle wave and interactive canvases on every page. Custom cursor, scroll choreography and calculator included.',
+      tags:['HTML/CSS/JS','Three.js','WebGL','UI'],
+      stats:[{v:'100',l:'Performance'},{v:'0',l:'Frameworks'},{v:'10',l:'Pages'}] }
+  ];
+
+  if (window.afterLoad) {
+    afterLoad('page-hero-canvas', function (c) { IBE.initAmbient(c, 0xD42B2B, 0x8B0000); });
+    afterLoad('cta-canvas', function (c) { IBE.initAmbient(c, 0xF7F6F2, 0xD42B2B); });
+  }
+  if (window.IBE && IBE.lazy) PROJECTS.forEach(function (p, i) {
+    IBE.lazy('pf-canvas-' + i, function (c) { IBE.initGridCanvas(c, { a: p.a, b: p.b, c: 0xF7F6F2, speed: 0.9 + i * 0.05, amp: 1.0 }); });
+  });
+
+  (function () {
+    var btns = Array.prototype.slice.call(document.querySelectorAll('.pf-filter'));
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.pf-card'));
+    var shown = document.getElementById('pf-shown');
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        btns.forEach(function (x) { x.classList.remove('active'); x.setAttribute('aria-selected', 'false'); });
+        b.classList.add('active'); b.setAttribute('aria-selected', 'true');
+        var f = b.getAttribute('data-filter'), n = 0;
+        cards.forEach(function (card) {
+          var ok = f === 'all' || card.getAttribute('data-cat').indexOf(f) > -1;
+          card.classList.toggle('hide', !ok); if (ok) n++;
+        });
+        if (shown) shown.textContent = n;
+      });
+    });
+  })();
+
+  (function () {
+    var modal = document.getElementById('modal');
+    var closeBtn = document.getElementById('modal-close');
+    var elCat = document.getElementById('modal-cat'), elTitle = document.getElementById('modal-title');
+    var elDesc = document.getElementById('modal-desc'), elStats = document.getElementById('modal-stats'), elTags = document.getElementById('modal-tags');
+    var canvas = document.getElementById('modal-canvas');
+    var ctrl = null, lastFocus = null;
+
+    function open(i) {
+      var p = PROJECTS[i]; if (!p) return;
+      lastFocus = document.activeElement;
+      elCat.textContent = p.cat; elTitle.textContent = p.title; elDesc.textContent = p.desc;
+      elStats.innerHTML = p.stats.map(function (s) {
+        return '<div class="modal-stat"><div class="v">' + s.v + (s.suf ? '<span class="suf">' + s.suf + '</span>' : '') + '</div><div class="l">' + s.l + '</div></div>';
+      }).join('');
+      elTags.innerHTML = p.tags.map(function (t) { return '<span class="tag">' + t + '</span>'; }).join('');
+      modal.classList.add('open'); document.body.style.overflow = 'hidden';
+      if (ctrl) { ctrl.stop(); ctrl = null; }
+      if (typeof THREE !== 'undefined' && IBE.initModalWave) ctrl = IBE.initModalWave(canvas, { a: p.a, b: p.b, c: 0xF7F6F2 });
+      closeBtn.focus();
+    }
+    function close() {
+      modal.classList.remove('open'); document.body.style.overflow = '';
+      if (ctrl) { ctrl.stop(); ctrl = null; }
+      if (lastFocus) lastFocus.focus();
+    }
+    Array.prototype.slice.call(document.querySelectorAll('.pf-card')).forEach(function (card) {
+      card.addEventListener('click', function () { open(parseInt(card.getAttribute('data-modal'), 10)); });
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(parseInt(card.getAttribute('data-modal'), 10)); }
+      });
+    });
+    closeBtn.addEventListener('click', close);
+    Array.prototype.slice.call(modal.querySelectorAll('[data-close]')).forEach(function (el) { el.addEventListener('click', close); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+  })();
+})();
+</script>
+</body>
+</html>

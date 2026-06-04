@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IBE Motion Studio — AI-first motion design · Landgraaf</title>
+<meta name="description" content="IBE Motion Studio puts brands in motion. AI-first motion design, 3D product visuals, content and systems from Landgraaf, the Netherlands. Results first.">
+<link rel="icon" type="image/png" href="../assets/IBEMOTION-logo-NO-BG-TEXT.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div id="loader">
+  <img class="loader-logo" src="../assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio">
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-count"><b>0</b> / 100</div>
+</div>
+
+<div id="cursor-ring"></div>
+<div id="cursor-dot"></div>
+<div class="vignette"></div>
+
+<nav aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="IBE Motion Studio — home">
+    <img src="../assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="diensten.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="contact.html" class="btn btn-primary nav-cta">Get in touch</a>
+    <div class="nav-lang">
+      <a href="../index.html" class="lang-btn">NL</a>
+      <a href="index.html" class="lang-btn active">EN</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="index.html"><span class="idx">01</span>Home</a></li>
+    <li><a href="diensten.html"><span class="idx">02</span>Services</a></li>
+    <li><a href="portfolio.html"><span class="idx">03</span>Portfolio</a></li>
+    <li><a href="contact.html"><span class="idx">04</span>Contact</a></li>
+  </ul>
+  <div class="mm-foot"><a href="../index.html">Nederlands</a><span>hello@ibemotionstudio.nl</span><span>Landgraaf, NL</span></div>
+</div>
+
+<!-- ════════ HERO ════════ -->
+<header class="hero">
+  <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+  <svg class="hero-pattern" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <pattern id="dbars" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="skewX(-35)">
+        <animate attributeName="x" from="0" to="64" dur="7s" repeatCount="indefinite"/>
+        <rect width="12" height="64" fill="#D42B2B" opacity="0.5"></rect>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#dbars)"></rect>
+  </svg>
+  <div class="hero-veil"></div>
+
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <span class="wave-eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      <span class="avail"><span class="avail-dot" aria-hidden="true"></span><span class="avail-text">Loading availability…</span></span>
+    </div>
+
+    <h1 class="hero-headline">
+      <span class="ln mask" data-hero><span>We put</span></span>
+      <span class="ln mask" data-hero><span>brands in</span></span>
+      <span class="ln mask" data-hero><span class="outline">motion.</span></span>
+    </h1>
+
+    <div class="hero-foot">
+      <p class="rv-up" data-hero>AI-first motion studio in Landgraaf. We make visuals that hold viewers and move the numbers.</p>
+      <div class="hero-cta-row rv-up" data-hero>
+        <a href="portfolio.html" class="btn btn-primary">
+          View work
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="contact.html" class="btn btn-outline">Start a conversation</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span>Scroll</span>
+    <span class="line"></span>
+  </div>
+</header>
+
+<!-- ════════ MARQUEE ════════ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Motion Design</span><span class="o">3D Renders</span><span>AI Systems</span><span class="o">Short Form</span><span>Branding</span><span class="o">Websites</span><span>Content</span><span class="o">Strategy</span>
+    <span>Motion Design</span><span class="o">3D Renders</span><span>AI Systems</span><span class="o">Short Form</span><span>Branding</span><span class="o">Websites</span><span>Content</span><span class="o">Strategy</span>
+  </div>
+</div>
+
+<!-- ════════ STATEMENT ════════ -->
+<section class="section zoom" data-breath>
+  <p class="section-label rv"><span class="diag-bar sm"></span> The difference</p>
+  <h2 class="section-title rv-up" data-delay="0.05">Most agencies<br>start with the idea.<br><span class="outline">We start with the result.</span></h2>
+  <p class="section-sub rv" data-delay="0.1">Strategy without execution is an opinion. Execution without strategy is noise. We do both — and measure whether it works.</p>
+</section>
+
+<!-- ════════ WHY ════════ -->
+<section class="section tight">
+  <div class="section-head">
+    <p class="section-label rv"><span class="diag-bar sm"></span> Why IBE</p>
+    <h2 class="section-title rv-up" data-delay="0.05">No agency.<br>A partner.</h2>
+  </div>
+  <div class="grid-4 zoom">
+    <article class="feat rv-up" data-delay="0">
+      <span class="feat-num">01</span>
+      <svg class="feat-icon" viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg>
+      <h3 class="feat-title">AI-first</h3>
+      <p class="feat-desc">We build on AI where it is faster and better, and keep a human hand where it counts. More output, same investment.</p>
+    </article>
+    <article class="feat rv-up" data-delay="0.08">
+      <span class="feat-num">02</span>
+      <svg class="feat-icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+      <h3 class="feat-title">Results first</h3>
+      <p class="feat-desc">Beautiful work that returns nothing is an expensive hobby. Every project starts with a goal and ends with a number.</p>
+    </article>
+    <article class="feat rv-up" data-delay="0.16">
+      <span class="feat-num">03</span>
+      <svg class="feat-icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      <h3 class="feat-title">No nonsense</h3>
+      <p class="feat-desc">Clear language, fixed prices, short lines. You know what you get, when you get it and what it costs.</p>
+    </article>
+    <article class="feat rv-up" data-delay="0.24">
+      <span class="feat-num">04</span>
+      <svg class="feat-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <h3 class="feat-title">Locally rooted</h3>
+      <p class="feat-desc">Based in Landgraaf, at home across Limburg and beyond. Personal contact, no call centre.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ════════ SERVICES ════════ -->
+<section class="section" data-breath>
+  <span class="bgtext" data-parallax="0.08" style="top:-2%;right:-4%">WORK</span>
+  <div class="section-head">
+    <p class="section-label rv"><span class="diag-bar sm"></span> What we do</p>
+    <h2 class="section-title rv-up" data-delay="0.05">Services that<br>stick.</h2>
+  </div>
+  <div class="svc-grid zoom">
+    <a href="diensten.html#product-visuals" class="svc-card rv-up" data-tilt data-delay="0">
+      <div class="svc-card-top"><span class="svc-card-num">01</span><svg class="svc-card-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></div>
+      <div><h3 class="svc-card-title">Product<br>Visuals</h3><p class="svc-card-desc">Photorealistic 3D renders and animations that sell your product without a studio or photoshoot.</p><div class="svc-card-tags"><span class="tag">3D</span><span class="tag">Render</span><span class="tag">Animation</span></div></div>
+    </a>
+    <a href="diensten.html#content-marketing" class="svc-card rv-up" data-tilt data-delay="0.08">
+      <div class="svc-card-top"><span class="svc-card-num">02</span><svg class="svc-card-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></div>
+      <div><h3 class="svc-card-title">Content<br>Marketing</h3><p class="svc-card-desc">Consistent content that keeps your brand visible on the channels your customer watches.</p><div class="svc-card-tags"><span class="tag">Social</span><span class="tag">Strategy</span><span class="tag">Planning</span></div></div>
+    </a>
+    <a href="diensten.html#ai-systemen" class="svc-card rv-up" data-tilt data-delay="0.16">
+      <div class="svc-card-top"><span class="svc-card-num">03</span><svg class="svc-card-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></div>
+      <div><h3 class="svc-card-title">AI<br>Systems</h3><p class="svc-card-desc">Custom workflows and automations that take time-consuming manual work off your hands.</p><div class="svc-card-tags"><span class="tag">Automation</span><span class="tag">Workflow</span></div></div>
+    </a>
+    <a href="diensten.html#short-form" class="svc-card rv-up" data-tilt data-delay="0.24">
+      <div class="svc-card-top"><span class="svc-card-num">04</span><svg class="svc-card-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></div>
+      <div><h3 class="svc-card-title">Short Form<br>Content</h3><p class="svc-card-desc">Reels, Shorts and TikToks with a hook that stops the scroll in the first two seconds.</p><div class="svc-card-tags"><span class="tag">Reels</span><span class="tag">TikTok</span><span class="tag">Edit</span></div></div>
+    </a>
+  </div>
+  <div style="margin-top:36px" class="rv-up" data-delay="0.1">
+    <a href="diensten.html" class="btn btn-ghost">All 5 services <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<!-- ════════ STATS ════════ -->
+<section class="stats">
+  <canvas id="stats-canvas" class="stats-canvas" aria-hidden="true"></canvas>
+  <div class="stats-grid">
+    <div class="stat"><div class="stat-num"><span data-count="2">0</span></div><div class="stat-label">Years active</div></div>
+    <div class="stat"><div class="stat-num"><span data-count="6">0</span></div><div class="stat-label">Projects delivered</div></div>
+    <div class="stat"><div class="stat-num"><span data-count="5">0</span></div><div class="stat-label">Services</div></div>
+    <div class="stat"><div class="stat-num"><span data-count="24">0</span><span class="suf">h</span></div><div class="stat-label">Response time</div></div>
+  </div>
+</section>
+
+<!-- ════════ MANIFESTO ════════ -->
+<section class="section" data-breath style="text-align:center">
+  <span class="bgtext" data-parallax="0.12" style="top:50%;left:50%;transform:translate(-50%,-50%)">IBE</span>
+  <div class="zoom" style="position:relative">
+    <p class="section-label rv" style="justify-content:center"><span class="diag-bar sm"></span> Promise</p>
+    <h2 class="section-title rv-up" data-delay="0.05" style="max-width:16ch;margin:0 auto">We make motion<br>with a <span class="outline">mission.</span></h2>
+    <p class="section-sub rv" data-delay="0.1" style="margin:24px auto 0">No loose videos, but visuals that fit a plan. We think in campaigns, not clips.</p>
+  </div>
+</section>
+
+<!-- ════════ CTA ════════ -->
+<section class="cta">
+  <canvas id="cta-canvas" class="cta-canvas" aria-hidden="true"></canvas>
+  <div class="cta-inner">
+    <span class="diag-bar" style="margin:0 auto 18px"></span>
+    <p class="section-label rv" style="justify-content:center;color:rgba(247,246,242,.7)">Ready to move?</p>
+    <h2 class="section-title rv-up" data-delay="0.05">Book your free<br>intro call.</h2>
+    <p class="cta-sub rv" data-delay="0.1">Thirty minutes, no obligations. We look together at what motion can do for your brand.</p>
+    <div class="cta-row rv-up" data-delay="0.15">
+      <a href="contact.html" class="btn btn-solid-ivory btn-lg">Free intro call <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="portfolio.html" class="btn btn-outline btn-lg" style="border-color:rgba(247,246,242,.5)">View portfolio</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img class="footer-logo" src="../assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio">
+      <p class="footer-desc">AI-first motion design studio in Landgraaf, the Netherlands. We put brands in motion.</p>
+      <div class="footer-socials">
+        <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-12h4v1.5A6 6 0 0116 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://tiktok.com" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-heading">Navigation</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="diensten.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Services</p>
+      <ul class="footer-links">
+        <li><a href="diensten.html#product-visuals">Product Visuals</a></li>
+        <li><a href="diensten.html#content-marketing">Content Marketing</a></li>
+        <li><a href="diensten.html#ai-systemen">AI Systems</a></li>
+        <li><a href="diensten.html#short-form">Short Form</a></li>
+        <li><a href="diensten.html#websites">Websites</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Contact</p>
+      <ul class="footer-links">
+        <li><a href="mailto:hello@ibemotionstudio.nl">hello@ibemotionstudio.nl</a></li>
+        <li><a href="tel:+31612345678">+31 6 12 34 56 78</a></li>
+        <li><a href="contact.html">Landgraaf, Netherlands</a></li>
+        <li><a href="../index.html">Nederlandse versie</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 IBE Motion Studio · Landgraaf, Netherlands · CoC 98929879</p>
+    <a href="../index.html" class="footer-copy footer-lang-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c-2.5 3-4 6.5-4 10s1.5 7 4 10M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10"/></svg>
+      Nederlands
+    </a>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Back to top">
+  <svg class="scroll-top-ring" viewBox="0 0 44 44">
+    <rect x="2" y="2" width="40" height="40" rx="3" class="ring-track"/>
+    <rect x="2" y="2" width="40" height="40" rx="3" class="ring-fill" id="scroll-ring-fill"/>
+  </svg>
+  <svg class="scroll-top-arrow" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<div id="toast-wrap"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="../script.js"></script>
+<script>
+(function () {
+  if (window.afterLoad) {
+    afterLoad('hero-canvas', function (c) { IBE.initHeroWave(c, { a: 0x8B0000, b: 0xD42B2B, c: 0xF7F6F2 }); });
+    afterLoad('stats-canvas', function (c) { IBE.initAmbient(c, 0xD42B2B, 0x8B0000); });
+    afterLoad('cta-canvas', function (c) { IBE.initAmbient(c, 0xF7F6F2, 0xD42B2B); });
+  }
+})();
+</script>
+</body>
+</html>

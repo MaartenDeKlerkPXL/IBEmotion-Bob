@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#0A0A0A"/>
+  <link rel="icon" type="image/png" href="../IBEMOTION-logo-NO-BG-TEXT.png"/>
+  <title>IBE Motion Studio — Motion Design & AI Content</title>
+  <meta name="description" content="IBE Motion Studio maakt premium motion design, product visuals en AI-gedreven content marketing. Gebaseerd in Landgraaf. Plan een gratis kennismakingsgesprek."/>
+  <meta name="keywords" content="motion design, AI content, product visuals, short form content, content marketing, Landgraaf, Limburg"/>
+  <meta name="author" content="IBE Motion Studio"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="IBE Motion Studio — Motion Design & AI Content"/>
+  <meta property="og:description" content="Premium motion design. AI-fundament, menselijke connectie."/>
+  <meta property="og:image" content="https://ibemotionstudio.nl/IBEMOTION-logo.png"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://ibemotionstudio.nl"/>
+  <link rel="canonical" href="https://ibemotionstudio.nl"/>
+  <link rel="alternate" hreflang="en" href="https://ibemotionstudio.nl/EN/"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700;900&family=Barlow:wght@300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+
+<div id="loader">
+  <div class="loader-wrap">
+    <img src="../IBEMOTION-logo-NO-BG.png" alt="IBE Motion" class="loader-logo"/>
+    <div class="loader-bar-bg"><div id="loader-bar"></div></div>
+    <div class="loader-txt">LADEN</div>
+  </div>
+</div>
+
+<div id="cur-ring"></div>
+<div id="cur-dot"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="../IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio" class="nav-logo-img"/>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link active" data-scramble>Home</a></li>
+      <li><a href="diensten.html" class="nav-link" data-scramble>Diensten</a></li>
+      <li><a href="portfolio.html" class="nav-link" data-scramble>Portfolio</a></li>
+      <li><a href="contact.html" class="nav-link" data-scramble>Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-lang">
+        <a href="index.html" class="lang-btn active">NL</a>
+        <a href="./EN/index.html" class="lang-btn">EN</a>
+      </div>
+      <a href="contact.html" class="nav-cta">Kennismaking</a>
+    </div>
+    <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mob-menu" id="mob-menu">
+    <a href="index.html" class="mob-link">Home</a>
+    <a href="diensten.html" class="mob-link">Diensten</a>
+    <a href="portfolio.html" class="mob-link">Portfolio</a>
+    <a href="contact.html" class="mob-link">Contact</a>
+    <div class="mob-lang">
+      <a href="index.html" class="active">NL</a>
+      <a href="../EN/index.html">EN</a>
+    </div>
+    <a href="contact.html" class="mob-cta">Kennismaking plannen →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-bars">
+    <div class="hb hb1"></div>
+    <div class="hb hb2"></div>
+    <div class="hb hb3"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="hero-dot" id="status-dot"></span>
+        <span id="status-text">Motion Design Studio — Landgraaf</span>
+      </div>
+      <h1 class="h1 hero-title rv rv-up">
+        Merken die<br/><span class="h-outline-red">bewegen,</span><br/>groeien.
+      </h1>
+      <p class="hero-sub rv rv-up" data-delay="120">
+        Niet elke studio werkt met AI als ruggengraat. Wij wel — zodat jij sneller resultaat ziet zonder in te leveren op kwaliteit.
+      </p>
+      <div class="hero-actions rv rv-up" data-delay="240">
+        <a href="contact.html" class="btn btn-red lg"><span>Plan kennismaking</span><span class="arr">→</span></a>
+        <a href="diensten.html" class="btn btn-ghost">Bekijk diensten</a>
+      </div>
+    </div>
+    <div class="hero-right rv rv-right" data-delay="200">
+      <div class="hero-img-wrap">
+        <img src="part-mesh2.png" alt="IBE Motion Studio — particle mesh visual" data-parallax=".05"/>
+        <div class="hero-img-corner tl"></div>
+        <div class="hero-img-corner br"></div>
+        <div class="hero-tag">
+          <div class="hero-tag-label">Werkwijze</div>
+          <div class="hero-tag-val">AI-first</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hs-line"></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="marquee-inner">
+      <span>Product Visuals</span><span class="sep">—</span>
+      <span>AI Systemen</span><span class="sep">—</span>
+      <span>Short Form Content</span><span class="sep">—</span>
+      <span>Content Marketing</span><span class="sep">—</span>
+      <span>Websites</span><span class="sep">—</span>
+      <span>Motion Design</span><span class="sep">—</span>
+      <span>Product Visuals</span><span class="sep">—</span>
+      <span>AI Systemen</span><span class="sep">—</span>
+      <span>Short Form Content</span><span class="sep">—</span>
+      <span>Content Marketing</span><span class="sep">—</span>
+      <span>Websites</span><span class="sep">—</span>
+      <span>Motion Design</span><span class="sep">—</span>
+    </div>
+  </div>
+</div>
+
+<!-- TRIGGER STRIP -->
+<div class="trigger-strip">
+  <div class="trigger-inner">
+    <span class="trigger-dot"></span>
+    <p class="trigger-text">De meeste bureaus beginnen bij het idee. Wij beginnen bij het <strong>resultaat</strong> — en werken van daaruit terug naar de content.</p>
+    <a href="diensten.html" class="btn btn-ghost" style="white-space:nowrap;padding:10px 0;font-size:12px;">Hoe dat werkt →</a>
+  </div>
+</div>
+
+<!-- WHY -->
+<section class="section" style="background:var(--dark);">
+  <div class="container">
+    <div class="rv rv-up" style="margin-bottom:56px;">
+      <div class="lbl">Waarom IBE</div>
+      <h2 class="h2">Niet meer doen.<br/><span class="red">Slimmer doen.</span></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item rv rv-up" data-delay="0">
+        <div class="why-num">01</div>
+        <h3 class="h3 ivory" style="margin-bottom:12px;">AI als werkwijze, niet als trucje</h3>
+        <p>Elke workflow is gebouwd op AI — van scripting tot animatie. Dat betekent sneller leveren, consistenter resultaat en ruimte voor betere ideeën.</p>
+      </div>
+      <div class="why-item rv rv-up" data-delay="80">
+        <div class="why-num">02</div>
+        <h3 class="h3 ivory" style="margin-bottom:12px;">Content die een functie heeft</h3>
+        <p>Geen opvulling. Elk stuk content dat wij maken heeft een doel: aandacht trekken, vertrouwen opbouwen of aanzetten tot actie. Altijd meetbaar.</p>
+      </div>
+      <div class="why-item rv rv-up" data-delay="160">
+        <div class="why-num">03</div>
+        <h3 class="h3 ivory" style="margin-bottom:12px;">Eén aanspreekpunt, volledig ontzorgd</h3>
+        <p>Van strategie tot gepubliceerde post — je hebt één contact. Geen doorschuiven, geen verrassingen. Directe lijn, altijd bereikbaar.</p>
+      </div>
+      <div class="why-item rv rv-up" data-delay="240">
+        <div class="why-num">04</div>
+        <h3 class="h3 ivory" style="margin-bottom:12px;">Schaalbaar als je groeit</h3>
+        <p>Starten met één dienst en uitbreiden als het werkt. De systemen die wij bouwen groeien mee — zonder dat je opnieuw van nul begint.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIENSTEN PREVIEW -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:64px;" class="rv rv-up">
+      <div>
+        <div class="lbl">Diensten</div>
+        <h2 class="h2">Wat we maken.</h2>
+      </div>
+      <div style="padding-bottom:8px;">
+        <p class="body-l">Van product visual tot volledige contentstrategie. Alles is te combineren, niks is standaard.</p>
+        <a href="diensten.html" class="btn btn-ghost" style="margin-top:20px;">Alle diensten bekijken →</a>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;border:1px solid var(--border);">
+      <a href="diensten.html#product-visuals" class="card rv rv-up" data-delay="0" id="card-pv" style="display:block;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;">
+          <div class="lbl" style="margin:0;">Product Visuals</div>
+          <span style="font-family:var(--display);font-size:52px;font-weight:900;letter-spacing:-.04em;color:rgba(212,43,43,.1);line-height:1;">01</span>
+        </div>
+        <h3 class="h3 ivory" style="margin-bottom:12px;">Je product, zoals het verdient te worden gezien</h3>
+        <p class="body-m">Cinematic renders en motion visuals die je product in het juiste licht zetten. Gemaakt voor advertenties, e-commerce en social.</p>
+        <div class="hr" style="margin:24px 0;"></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <span style="font-family:var(--display);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:5px 12px;">Renders</span>
+          <span style="font-family:var(--display);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:5px 12px;">Motion</span>
+          <span style="font-family:var(--display);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:5px 12px;">Advertenties</span>
+        </div>
+      </a>
+      <a href="diensten.html#content-marketing" class="card rv rv-up" data-delay="80" id="card-cm" style="display:block;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;">
+          <div class="lbl" style="margin:0;">Content Marketing</div>
+          <span style="font-family:var(--display);font-size:52px;font-weight:900;letter-spacing:-.04em;color:rgba(212,43,43,.1);line-height:1;">02</span>
+        </div>
+        <h3 class="h3 ivory" style="margin-bottom:12px;">Strategie die aansluit op hoe mensen kopen</h3>
+        <p class="body-m">Van contentstrategie tot publicatiekalender. Content die niet alleen mooi oogt, maar ook werkt op het moment dat het telt.</p>
+        <div class="hr" style="margin:24px 0;"></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <span style="font-family:var(--display);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:5px 12px;">Strategie</span>
+          <span style="font-family:var(--display);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:5px 12px;">Kalender</span>
+          <span style="font-family:var(--display);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:5px 12px;">Conversie</span>
+        </div>
+      </a>
+      <a href="diensten.html#ai-systemen" class="card rv rv-up" data-delay="160" id="card-ai" style="display:block;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;">
+          <div class="lbl" style="margin:0;">AI Systemen</div>
+          <span style="font-family:var(--display);font-size:52px;font-weight:900;letter-spacing:-.04em;color:rgba(212,43,43,.1);line-height:1;">03</span>
+        </div>
+        <h3 class="h3 ivory" style="margin-bottom:12px;">Automatiseer wat herhaalbaar is</h3>
+        <p class="body-m">Slimme content pipelines die je productie versnellen. Minder handmatig werk, meer consistente output — en tijd voor wat écht waarde toevoegt.</p>
+        <div class="hr" style="margin:24px 0;"></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <span style="font-family:var(--display);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:5px 12px;">Pipeline</span>
+          <span style="font-family:var(--display);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:5px 12px;">Automatisering</span>
+          <span style="font-family:var(--display);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:5px 12px;">Schaalbaarheid</span>
+        </div>
+      </a>
+      <a href="diensten.html#short-form" class="card rv rv-up" data-delay="240" id="card-sf" style="display:block;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;">
+          <div class="lbl" style="margin:0;">Short Form Content</div>
+          <span style="font-family:var(--display);font-size:52px;font-weight:900;letter-spacing:-.04em;color:rgba(212,43,43,.1);line-height:1;">04</span>
+        </div>
+        <h3 class="h3 ivory" style="margin-bottom:12px;">Reels die mensen laten stoppen</h3>
+        <p class="body-m">Gebouwd voor algoritmes, gemaakt voor mensen. Reels, TikToks en Shorts die niet verdwijnen in de feed maar blijven hangen.</p>
+        <div class="hr" style="margin:24px 0;"></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <span style="font-family:var(--display);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:5px 12px;">Reels</span>
+          <span style="font-family:var(--display);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:5px 12px;">TikTok</span>
+          <span style="font-family:var(--display);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:5px 12px;">Shorts</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MESH VISUAL + STATS -->
+<section class="section" style="background:var(--dark);padding:0;overflow:hidden;">
+  <div style="display:grid;grid-template-columns:1.2fr 1fr;">
+    <div style="position:relative;min-height:500px;overflow:hidden;">
+      <img src="part-mesh1.png" alt="IBE Motion Studio particle mesh" style="width:100%;height:100%;object-fit:cover;display:block;opacity:.85;" data-parallax=".08"/>
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,var(--dark) 100%);"></div>
+      <div class="rv rv-left" style="position:absolute;bottom:32px;left:32px;background:var(--card);border:1px solid var(--border);border-left:2px solid var(--red);padding:16px 20px;">
+        <div class="lbl" style="margin-bottom:4px;">Werkwijze</div>
+        <div style="font-family:var(--display);font-size:22px;font-weight:900;color:var(--ivory);letter-spacing:-.01em;">AI-first. Altijd.</div>
+      </div>
+    </div>
+    <div style="padding:64px 56px;display:flex;flex-direction:column;justify-content:center;gap:40px;">
+      <div class="rv rv-up">
+        <div class="lbl">In cijfers</div>
+        <h2 class="h2" style="font-size:clamp(36px,4vw,56px);">Resultaat<br/>telt.</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:32px;">
+        <div class="rv rv-up" data-delay="80" style="padding-bottom:32px;border-bottom:1px solid var(--border);">
+          <div class="stat-num" data-count="2" data-suffix="+">0</div>
+          <div class="stat-label">Jaar actief</div>
+        </div>
+        <div class="rv rv-up" data-delay="160" style="padding-bottom:32px;border-bottom:1px solid var(--border);">
+          <div class="stat-num" data-count="5" data-suffix="">0</div>
+          <div class="stat-label">Specialisaties</div>
+        </div>
+        <div class="rv rv-up" data-delay="240">
+          <div class="stat-num" data-count="100" data-suffix="%">0</div>
+          <div class="stat-label">AI-gedreven werkwijze</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background:var(--red);position:relative;overflow:hidden;text-align:center;">
+  <div class="dbar" style="width:280px;height:12px;background:rgba(10,10,10,.25);top:20px;left:-50px;"></div>
+  <div class="dbar" style="width:180px;height:8px;background:rgba(247,246,242,.12);bottom:20px;right:-30px;"></div>
+  <div class="container rv rv-up" style="max-width:680px;">
+    <div class="lbl" style="color:rgba(247,246,242,.6);">Volgende stap</div>
+    <h2 class="h2" style="color:var(--ivory);margin-bottom:18px;">Klaar om jouw merk<br/>in beweging te zetten?</h2>
+    <p style="font-size:17px;font-weight:300;color:rgba(247,246,242,.75);line-height:1.75;margin-bottom:40px;">Plan een gratis Zoom-call van 30 minuten. Geen verplichtingen — gewoon kijken of we een match zijn.</p>
+    <a href="contact.html" class="btn btn-red lg" style="background:var(--ivory);color:var(--black);border-color:var(--ivory);"><span>Plan kennismaking</span><span class="arr">→</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="dbar" style="width:260px;height:10px;background:rgba(212,43,43,.07);top:0;right:80px;"></div>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo"><img src="../IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio"/></a>
+        <p class="footer-tagline">AI als fundament.<br/>Menselijke connectie.</p>
+        <div class="footer-socials">
+          <a href="mailto:ibemotionmedia@gmail.com" class="fsoc">Mail</a>
+          <a href="https://linkedin.com/company/ibemotionstudio" target="_blank" rel="noopener" class="fsoc">LI</a>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div class="fcol">
+          <h5>Navigatie</h5>
+          <a href="index.html">Home</a>
+          <a href="diensten.html">Diensten</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="contact.html">Contact</a>
+          <a href="../EN/index.html">English →</a>
+        </div>
+        <div class="fcol">
+          <h5>Diensten</h5>
+          <a href="diensten.html#product-visuals">Product Visuals</a>
+          <a href="diensten.html#content-marketing">Content Marketing</a>
+          <a href="diensten.html#ai-systemen">AI Systemen</a>
+          <a href="diensten.html#short-form">Short Form Content</a>
+          <a href="diensten.html#websites">Websites</a>
+        </div>
+        <div class="fcol">
+          <h5>Contact</h5>
+          <a href="mailto:ibemotionmedia@gmail.com">ibemotionmedia@gmail.com</a>
+          <a href="https://linkedin.com/company/ibemotionstudio" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="contact.html" class="red-link">Plan Zoom call →</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 IBE Motion Studio — Landgraaf, Limburg</span>
+      <span>Gemaakt door <a href="https://portfolio-maartendeklerk.netlify.app/" target="_blank" rel="noopener">Maarten de Klerk</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scroll-top" aria-label="Terug naar boven">↑</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — IBE Motion Studio</title>
+<meta name="description" content="Get in touch with IBE Motion Studio for a free intro call. Based in Landgraaf, the Netherlands. Reply within 24 hours on working days.">
+<link rel="icon" type="image/png" href="../assets/IBEMOTION-logo-NO-BG-TEXT.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div id="loader">
+  <img class="loader-logo" src="../assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio">
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-count"><b>0</b> / 100</div>
+</div>
+
+<div id="cursor-ring"></div>
+<div id="cursor-dot"></div>
+<div class="vignette"></div>
+
+<nav aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="IBE Motion Studio — home">
+    <img src="../assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="diensten.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="contact.html" class="btn btn-primary nav-cta">Get in touch</a>
+    <div class="nav-lang">
+      <a href="../contact.html" class="lang-btn">NL</a>
+      <a href="contact.html" class="lang-btn active">EN</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" aria-label="Mobile navigation">
+  <ul>
+    <li><a href="index.html"><span class="idx">01</span>Home</a></li>
+    <li><a href="diensten.html"><span class="idx">02</span>Services</a></li>
+    <li><a href="portfolio.html"><span class="idx">03</span>Portfolio</a></li>
+    <li><a href="contact.html"><span class="idx">04</span>Contact</a></li>
+  </ul>
+  <div class="mm-foot"><a href="../contact.html">Nederlands</a><span>hello@ibemotionstudio.nl</span><span>Landgraaf, NL</span></div>
+</div>
+
+<!-- ════════ PAGE HERO ════════ -->
+<header class="page-hero" style="min-height:60svh">
+  <canvas id="page-hero-canvas" class="page-hero-canvas" aria-hidden="true"></canvas>
+  <div class="page-hero-veil"></div>
+  <div class="page-hero-inner">
+    <div class="page-idx page-hero-eyebrow"><span>Let's talk</span><span class="sep">/</span><span>Free &amp; no obligation</span></div>
+    <h1 class="page-hero-title"><span class="mask"><span>Contact.</span></span></h1>
+  </div>
+</header>
+
+<!-- ════════ CONTACT ════════ -->
+<div class="contact">
+  <aside class="cinfo">
+    <span class="diag-bar"></span>
+    <h2 class="cinfo-title">Send us a<br>message.</h2>
+
+    <h3 class="cinfo-head">Email</h3>
+    <p class="cinfo-text"><a href="mailto:hello@ibemotionstudio.nl">hello@ibemotionstudio.nl</a></p>
+
+    <h3 class="cinfo-head">Phone</h3>
+    <p class="cinfo-text"><a href="tel:+31612345678">+31 6 12 34 56 78</a><br>
+      <span class="avail" style="margin-top:8px"><span class="avail-dot" aria-hidden="true"></span><span class="avail-text">Loading availability…</span></span></p>
+
+    <h3 class="cinfo-head">Location</h3>
+    <p class="cinfo-text">Landgraaf, Limburg<br>The Netherlands</p>
+
+    <div class="zoom-badge">
+      <svg viewBox="0 0 24 24"><path d="M15 10l4.5-2.7A1 1 0 0121 8.2v7.6a1 1 0 01-1.5.9L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+      Available via Zoom &amp; Google Meet
+    </div>
+
+    <div class="creasons">
+      <div class="creason">
+        <span class="creason-ic"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></span>
+        <div><p class="creason-t">Fast response</p><p class="creason-d">Within 24 hours on working days, usually the same day.</p></div>
+      </div>
+      <div class="creason">
+        <span class="creason-ic"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></span>
+        <div><p class="creason-t">No obligation</p><p class="creason-d">The intro call is free and without commitment.</p></div>
+      </div>
+      <div class="creason">
+        <span class="creason-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <div><p class="creason-t">Quick start</p><p class="creason-d">After the intro you can start within a week.</p></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="zoom">
+    <form class="cform" id="contact-form" novalidate aria-label="Contact form">
+      <div class="form-row">
+        <div class="fg">
+          <label class="fl" for="f-naam">Name <span class="req">*</span></label>
+          <input class="fi" type="text" id="f-naam" name="naam" placeholder="Your name" autocomplete="name" required>
+        </div>
+        <div class="fg">
+          <label class="fl" for="f-email">Email <span class="req">*</span></label>
+          <input class="fi" type="email" id="f-email" name="email" placeholder="you@email.com" autocomplete="email" required>
+        </div>
+      </div>
+      <div class="fg">
+        <label class="fl" for="f-bedrijf">Company</label>
+        <input class="fi" type="text" id="f-bedrijf" name="bedrijf" placeholder="Company name (optional)" autocomplete="organization">
+      </div>
+      <div class="fg">
+        <label class="fl" for="f-dienst">Service <span class="req">*</span></label>
+        <select class="fs" id="f-dienst" name="dienst" required>
+          <option value="" disabled selected>Select a service</option>
+          <option value="Product Visuals">Product Visuals</option>
+          <option value="Content Marketing">Content Marketing</option>
+          <option value="AI Systems">AI Systems</option>
+          <option value="Short Form">Short Form Content</option>
+          <option value="Website">Website</option>
+          <option value="Not sure yet">Combination / not sure yet</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label class="fl" for="f-bericht">Message <span class="req">*</span></label>
+        <textarea class="ft" id="f-bericht" name="bericht" placeholder="Tell us about your project, goals or wishes…" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary form-submit" id="form-submit">Send message <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <p class="form-note">By sending you agree to a one-off contact request. No spam, ever.</p>
+    </form>
+  </div>
+</div>
+
+<!-- ════════ CTA ════════ -->
+<section class="cta">
+  <canvas id="cta-canvas" class="cta-canvas" aria-hidden="true"></canvas>
+  <div class="cta-inner">
+    <span class="diag-bar" style="margin:0 auto 18px"></span>
+    <p class="section-label rv" style="justify-content:center;color:rgba(247,246,242,.7)">Or call directly</p>
+    <h2 class="section-title rv-up" data-delay="0.05">+31 6 12 34 56 78</h2>
+    <p class="cta-sub rv" data-delay="0.1">Available Monday to Friday from 09:00 to 17:30.</p>
+    <div class="cta-row rv-up" data-delay="0.15">
+      <a href="tel:+31612345678" class="btn btn-solid-ivory btn-lg">Call now <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img class="footer-logo" src="../assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio">
+      <p class="footer-desc">AI-first motion design studio in Landgraaf, the Netherlands. We put brands in motion.</p>
+      <div class="footer-socials">
+        <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-12h4v1.5A6 6 0 0116 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://tiktok.com" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-heading">Navigation</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li><li><a href="diensten.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Services</p>
+      <ul class="footer-links">
+        <li><a href="diensten.html#product-visuals">Product Visuals</a></li>
+        <li><a href="diensten.html#content-marketing">Content Marketing</a></li>
+        <li><a href="diensten.html#ai-systemen">AI Systems</a></li>
+        <li><a href="diensten.html#short-form">Short Form</a></li>
+        <li><a href="diensten.html#websites">Websites</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Contact</p>
+      <ul class="footer-links">
+        <li><a href="mailto:hello@ibemotionstudio.nl">hello@ibemotionstudio.nl</a></li>
+        <li><a href="tel:+31612345678">+31 6 12 34 56 78</a></li>
+        <li><a href="contact.html">Landgraaf, Netherlands</a></li>
+        <li><a href="../contact.html">Nederlandse versie</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 IBE Motion Studio · Landgraaf, Netherlands · CoC 98929879</p>
+    <a href="../contact.html" class="footer-copy footer-lang-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c-2.5 3-4 6.5-4 10s1.5 7 4 10M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10"/></svg>
+      Nederlands
+    </a>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Back to top">
+  <svg class="scroll-top-ring" viewBox="0 0 44 44">
+    <rect x="2" y="2" width="40" height="40" rx="3" class="ring-track"/>
+    <rect x="2" y="2" width="40" height="40" rx="3" class="ring-fill" id="scroll-ring-fill"/>
+  </svg>
+  <svg class="scroll-top-arrow" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<div id="toast-wrap"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="../script.js"></script>
+<script>
+(function () {
+  if (window.afterLoad) {
+    afterLoad('page-hero-canvas', function (c) { IBE.initAmbient(c, 0xD42B2B, 0x8B0000); });
+    afterLoad('cta-canvas', function (c) { IBE.initAmbient(c, 0xF7F6F2, 0xD42B2B); });
+  }
+
+  var STORE = 'ibe_contact_en';
+  var FORMSPREE_ID = 'YOUR_FORMSPREE_ID'; /* replace with your Formspree ID */
+  var ids = ['f-naam', 'f-email', 'f-bedrijf', 'f-dienst', 'f-bericht'];
+  var form = document.getElementById('contact-form');
+  var submit = document.getElementById('form-submit');
+
+  function save() {
+    var d = {}; ids.forEach(function (id) { var el = document.getElementById(id); if (el) d[id] = el.value; });
+    try { localStorage.setItem(STORE, JSON.stringify(d)); } catch (e) {}
+  }
+  (function restore() {
+    try {
+      var raw = localStorage.getItem(STORE); if (!raw) return; var d = JSON.parse(raw);
+      ids.forEach(function (id) { var el = document.getElementById(id); if (el && d[id]) el.value = d[id]; });
+    } catch (e) {}
+  })();
+  ids.forEach(function (id) { var el = document.getElementById(id); if (el) el.addEventListener('input', save, { passive: true }); });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var ok = true;
+    ids.forEach(function (id) {
+      var el = document.getElementById(id); if (!el) return;
+      if (el.required && !el.value.trim()) { el.classList.add('err'); ok = false; } else { el.classList.remove('err'); }
+    });
+    if (!ok) { window.IBE_toast('Please fill in all required fields.', 'error'); return; }
+
+    submit.classList.add('shake');
+    var original = submit.innerHTML;
+    submit.disabled = true; submit.textContent = 'Sending…';
+
+    function done(success) {
+      submit.disabled = false; submit.innerHTML = original;
+      if (success) {
+        window.IBE_toast('Message sent! We will be in touch soon.', 'success');
+        form.reset(); try { localStorage.removeItem(STORE); } catch (e) {}
+      } else {
+        window.IBE_toast('Something went wrong. Please try again.', 'error');
+      }
+    }
+
+    if (FORMSPREE_ID === 'YOUR_FORMSPREE_ID') {
+      setTimeout(function () { done(true); }, 1100);
+      return;
+    }
+    fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+      method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' }
+    }).then(function (r) { done(r.ok); }).catch(function () { done(false); });
+  });
+})();
+</script>
+</body>
+</html>
