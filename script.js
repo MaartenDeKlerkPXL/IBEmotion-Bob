@@ -111,6 +111,70 @@
   })();
 
   /* ----------------------------------------------------------
+     VIDEO SCROLL — scrub via scroll, alleen op index.html
+     ---------------------------------------------------------- */
+  (function vidScroll() {
+    var wrap   = document.getElementById('vid-scroll');
+    var vid    = document.getElementById('vid-scroll-el');
+    var veil   = document.getElementById('vid-scroll-veil');
+    var spacer = document.getElementById('vid-scroll-spacer');
+    if (!wrap || !vid) return;
+
+    /* Video staat altijd stil — alleen scroll stuurt playback */
+    vid.pause();
+    vid.currentTime = 0;
+
+    /* Toon de video zodra ibe:loaded vuurt (na loader) */
+    window.addEventListener('ibe:loaded', function () {
+      wrap.classList.add('active');
+      /* Zorg dat video geladen is zodat scrubbing werkt */
+      vid.load();
+      /* Scroll naar top voor het geval de pagina al gescrold was */
+      window.scrollTo(0, 0);
+    });
+
+    var done = false;
+
+    window.addEventListener('scroll', function () {
+      if (done) return;
+      if (!wrap.classList.contains('active')) return;
+
+      var scrollY  = window.pageYOffset;
+      var maxScroll = spacer ? spacer.offsetHeight - window.innerHeight : window.innerHeight * 2;
+      if (maxScroll <= 0) maxScroll = window.innerHeight * 2;
+
+      var progress = Math.max(0, Math.min(1, scrollY / maxScroll));
+
+      /* Scrub video */
+      if (vid.duration && isFinite(vid.duration)) {
+        vid.currentTime = progress * vid.duration;
+      }
+
+      /* Veil fadet in bij laatste 30% van de scroll */
+      var veilProgress = Math.max(0, (progress - 0.7) / 0.3);
+      if (veil) veil.style.opacity = veilProgress.toFixed(3);
+
+      /* Als scroll volledig — verberg video en ga naar site */
+      if (progress >= 1) {
+        done = true;
+        wrap.classList.add('done');
+        document.body.classList.add('vid-done');
+        /* Scroll de gebruiker naar de echte pagina top */
+        setTimeout(function () {
+          window.scrollTo(0, 0);
+          wrap.style.display = 'none';
+        }, 520);
+      }
+    }, { passive: true });
+
+    /* prefers-reduced-motion: sla video over */
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      wrap.style.display = 'none';
+      document.body.classList.add('vid-done');
+    }
+  })();
+
+  /* ----------------------------------------------------------
      NAV — scroll state, scramble, hamburger, scroll-top
      ---------------------------------------------------------- */
   (function nav() {

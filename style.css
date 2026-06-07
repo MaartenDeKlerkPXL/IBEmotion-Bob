@@ -155,23 +155,122 @@ body.cursor-view #cursor-dot{width:7px;height:7px;background:var(--ivory)}
 /* ============================================================
    LOADER
    ============================================================ */
-#loader{
-  position:fixed;inset:0;z-index:var(--z-loader);
-  background:var(--black);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;
-  transition:opacity .7s var(--ease),visibility .7s var(--ease);
-}
-#loader.done{opacity:0;visibility:hidden;pointer-events:none}
-.loader-logo{width:clamp(120px,16vw,180px);opacity:.96;animation:loaderPulse 2.2s var(--ease) infinite}
-@keyframes loaderPulse{0%,100%{opacity:.55;transform:scale(.99)}50%{opacity:1;transform:scale(1)}}
-.loader-bar-wrap{width:min(280px,60vw);height:2px;background:var(--line);overflow:hidden}
-.loader-bar{height:100%;width:0%;background:var(--red);transition:width .25s var(--ease)}
-.loader-count{
-  font-family:var(--font-d);font-weight:700;font-size:13px;letter-spacing:.3em;
-  color:var(--mid);text-transform:uppercase;
-}
-.loader-count b{color:var(--ivory);font-weight:700}
+/*#loader{*/
+/*  position:fixed;inset:0;z-index:var(--z-loader);*/
+/*  background:var(--black);*/
+/*  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;*/
+/*  transition:opacity .7s var(--ease),visibility .7s var(--ease);*/
+/*}*/
+/*#loader.done{opacity:0;visibility:hidden;pointer-events:none}*/
+/*.loader-logo{width:clamp(120px,16vw,180px);opacity:.96;animation:loaderPulse 2.2s var(--ease) infinite}*/
+/*@keyframes loaderPulse{0%,100%{opacity:.55;transform:scale(.99)}50%{opacity:1;transform:scale(1)}}*/
+/*.loader-bar-wrap{width:min(280px,60vw);height:2px;background:var(--line);overflow:hidden}*/
+/*.loader-bar{height:100%;width:0%;background:var(--red);transition:width .25s var(--ease)}*/
+/*.loader-count{*/
+/*  font-family:var(--font-d);font-weight:700;font-size:13px;letter-spacing:.3em;*/
+/*  color:var(--mid);text-transform:uppercase;*/
+/*}*/
 
+/* ============================================================
+   LOADER
+   ============================================================ */
+#loader {
+  position: fixed; inset: 0; z-index: var(--z-loader);
+  background: var(--black);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px;
+  /* Visibility ingekort naar 1.6s (0.5s delay + 0.9s animatie + 0.2s marge) */
+  transition: visibility 0s 1.6s, background 0s 0.5s;
+}
+
+#loader.done {
+  background: transparent;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ── DE SCHUIFDEUREN ── */
+#loader::before,
+#loader::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: var(--black);
+  z-index: -1;
+  /* Duur is nu 0.9s (was 1.2s). De delay blijft 0.5s! */
+  transition: transform 0.9s var(--ease-io) 0.5s;
+}
+
+#loader::before {
+  top: 0;
+}
+
+#loader::after {
+  bottom: 0;
+}
+
+#loader.done::before {
+  transform: translateY(-100%); /* Bovenste helft schuift strak naar BOVEN */
+}
+
+#loader.done::after {
+  transform: translateY(100%);  /* Onderste helft schuift strak naar BENEDEN */
+}
+
+/* ── BEHOUD VAN LOGO, LAADBALK EN TELLER ── */
+.loader-logo {
+  width: clamp(120px, 16vw, 180px);
+  opacity: .96;
+  animation: loaderPulse 2.2s var(--ease) infinite;
+}
+
+@keyframes loaderPulse {
+  0%, 100% { opacity: .55; transform: scale(.99) }
+  50% { opacity: 1; transform: scale(1) }
+}
+
+.loader-bar-wrap {
+  width: min(280px, 60vw);
+  height: 2px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.loader-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--red);
+  transition: width .25s var(--ease);
+}
+
+.loader-count {
+  font-family: var(--font-d);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .3em;
+  color: var(--mid);
+  text-transform: uppercase;
+}
+
+.loader-count b {
+  color: var(--ivory);
+  font-weight: 700;
+}
+
+/* ── FADE-OUT VAN DE INHOUD ── */
+.loader-logo, .loader-bar-wrap, .loader-count {
+  /* Zodra 100% is bereikt, fade alles soepel weg in 0.4s */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#loader.done .loader-logo,
+#loader.done .loader-bar-wrap,
+#loader.done .loader-count {
+  animation: none; /* DIT IS DE FIX: Stop de adem-animatie direct! */
+  opacity: 0;
+  transform: scale(0.95);
+}
 /* ============================================================
    NAV
    ============================================================ */
@@ -663,7 +762,7 @@ footer{position:relative;z-index:3;background:var(--black);border-top:1px solid 
 .calc-tile-check svg{width:15px;height:15px;stroke:var(--ivory);fill:none;stroke-width:2.5;
   stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .5s var(--ease)}
 .calc-tile.sel{border-color:var(--red);background:rgba(212,43,43,.08);
-  box-shadow:0 0 0 1px var(--red),0 16px 44px -14px rgba(212,43,43,.55)}
+  box-shadow: 0 0 0 1px var(--red);}
 .calc-tile.sel .calc-tile-name{color:var(--red)}
 .calc-tile.sel .calc-tile-days{color:var(--red)}
 .calc-tile.sel .calc-tile-check{border-color:var(--red);background:var(--red);opacity:1}
@@ -679,7 +778,7 @@ footer{position:relative;z-index:3;background:var(--black);border-top:1px solid 
 .calc-output-u{font-size:.2em;color:var(--red);letter-spacing:.12em;text-transform:uppercase;
   font-weight:700;margin-left:6px}
 .calc-bar{height:4px;background:var(--line);overflow:hidden}
-.calc-bar-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--deep-red),var(--red));
+.calc-bar-fill{height:100%;width:0%;background:var(--red);
   transition:width .7s var(--ease)}
 
 /* ============================================================
@@ -902,4 +1001,45 @@ footer{position:relative;z-index:3;background:var(--black);border-top:1px solid 
 }
 @media (min-width:1640px){
   :root{--maxw:1440px}
+}
+
+/* ── VIDEO SCROLL HERO ── */
+#vid-scroll {
+  position: fixed;
+  inset: 0;
+  z-index: 8400;
+  background: #0A0A0A;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+#vid-scroll.active {
+  opacity: 1;
+  pointer-events: none;
+}
+#vid-scroll.done {
+  opacity: 0;
+  pointer-events: none;
+}
+#vid-scroll-el {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+#vid-scroll-veil {
+  position: absolute;
+  inset: 0;
+  background: #0A0A0A;
+  opacity: 0;
+  pointer-events: none;
+}
+/* spacer geeft scroll-ruimte voor de video */
+#vid-scroll-spacer {
+  height: 300vh;
+  pointer-events: none;
+}
+/* spacer verdwijnt nadat video klaar is */
+body.vid-done #vid-scroll-spacer {
+  display: none;
 }
