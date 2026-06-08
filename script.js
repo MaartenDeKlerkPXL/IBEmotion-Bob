@@ -25,24 +25,15 @@
      ---------------------------------------------------------- */
   (function cursor() {
     if (TOUCH) return;
-    var ring = $("#cursor-ring"), dot = $("#cursor-dot");
+    var ring = $("#cursor-ring"), dot = $("#cursor-dot"), pulse = $("#cursor-pulse");
     if (!ring || !dot) return;
-
-    var word = IS_EN ? "VIEW PROJECT · " : "BEKIJK PROJECT · ";
-    var label = document.createElement("div");
-    label.className = "cursor-label";
-    label.innerHTML =
-      '<svg viewBox="0 0 100 100" aria-hidden="true"><defs>' +
-      '<path id="ibe-cpath" d="M50,50 m-33,0 a33,33 0 1,1 66,0 a33,33 0 1,1 -66,0"/></defs>' +
-      '<text><textPath href="#ibe-cpath" startOffset="0">' + word + word + "</textPath></text></svg>";
-    ring.appendChild(label);
 
     var rx = window.innerWidth / 2, ry = window.innerHeight / 2;
     var tx = rx, ty = ry, on = false;
 
     window.addEventListener("mousemove", function (e) {
       tx = e.clientX; ty = e.clientY;
-      dot.style.transform = "translate(" + tx + "px," + ty + "px) translate(-50%,-50%)";
+      dot.style.left = tx + "px"; dot.style.top = ty + "px";
       if (!on) { on = true; document.body.classList.add("cursor-on"); }
     }, { passive: true });
 
@@ -51,24 +42,18 @@
     window.addEventListener("mouseleave", function () { document.body.classList.remove("cursor-on"); on = false; });
 
     function frame() {
-      rx = lerp(rx, tx, 0.16); ry = lerp(ry, ty, 0.16);
-      ring.style.transform = "translate(" + rx + "px," + ry + "px) translate(-50%,-50%)";
+      rx = lerp(rx, tx, 0.12); ry = lerp(ry, ty, 0.12);
+      ring.style.left = rx + "px"; ring.style.top = ry + "px";
+      if (pulse) { pulse.style.left = rx + "px"; pulse.style.top = ry + "px"; }
       requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
 
     function bind() {
-      $all('a,button,.btn,input,select,textarea,[data-cursor],.pf-card,.svc-card,.feat,label')
+      $all('a,button,.btn,input,select,textarea,[data-cursor],.pf-card,.svc-card,.feat,.calc-tile,.pf-filter,.nav-dropdown a,label')
         .forEach(function (el) {
-          var view = el.getAttribute("data-cursor") === "view";
-          el.addEventListener("mouseenter", function () {
-            document.body.classList.add("cursor-hover");
-            if (view) document.body.classList.add("cursor-view");
-          });
-          el.addEventListener("mouseleave", function () {
-            document.body.classList.remove("cursor-hover");
-            document.body.classList.remove("cursor-view");
-          });
+          el.addEventListener("mouseenter", function () { document.body.classList.add("cursor-hover"); });
+          el.addEventListener("mouseleave", function () { document.body.classList.remove("cursor-hover"); });
         });
     }
     bind();

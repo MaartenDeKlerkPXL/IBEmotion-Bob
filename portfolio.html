@@ -3,33 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — IBE Motion Studio</title>
+<title>Portfolio, IBE Motion Studio</title>
 <meta name="description" content="Werk van IBE Motion Studio: branding, motion, 3D renders, content en websites voor uiteenlopende opdrachtgevers in Limburg en daarbuiten.">
 <link rel="icon" type="image/png" href="assets/IBEMOTION-logo-NO-BG-TEXT.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
+<!-- SEO / social -->
+<link rel="canonical" href="https://ibemotionstudio.nl/portfolio.html"/>
+<meta property="og:title" content="Portfolio · IBE Motion Studio"/>
+<meta property="og:description" content="Werk van IBE Motion Studio: branding, motion, 3D renders, content en websites voor uiteenlopende opdrachtgevers in Limburg en daarbuiten."/>
+<meta property="og:image" content="https://ibemotionstudio.nl/assets/IBEMOTION-logo-NO-BG.png"/>
+<meta property="og:url" content="https://ibemotionstudio.nl/portfolio.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="nl_NL"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Portfolio · IBE Motion Studio"/>
+<meta name="twitter:description" content="Werk van IBE Motion Studio: branding, motion, 3D renders, content en websites voor uiteenlopende opdrachtgevers in Limburg en daarbuiten."/>
+<meta name="twitter:image" content="https://ibemotionstudio.nl/assets/IBEMOTION-logo-NO-BG.png"/>
+<link rel="alternate" hreflang="nl" href="https://ibemotionstudio.nl/portfolio.html"/>
+<link rel="alternate" hreflang="en" href="https://ibemotionstudio.nl/EN/portfolio.html"/>
+<link rel="alternate" hreflang="x-default" href="https://ibemotionstudio.nl/portfolio.html"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; frame-ancestors 'none'"/>
+<meta http-equiv="X-Frame-Options" content="DENY"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Ga naar hoofdinhoud</a>
 
 <div id="loader">
-  <img class="loader-logo" src="assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio">
+  <img class="loader-logo" src="assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio" width="180" height="180">
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
   <div class="loader-count"><b>0</b> / 100</div>
 </div>
 
 <div id="cursor-ring"></div>
 <div id="cursor-dot"></div>
+<div id="cursor-pulse"></div>
 <div class="vignette"></div>
 
 <nav aria-label="Hoofdnavigatie">
-  <a href="index.html" class="nav-logo" aria-label="IBE Motion Studio — home">
-    <img src="assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio">
+  <a href="index.html" class="nav-logo" aria-label="IBE Motion Studio, home">
+    <img src="assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio" width="40" height="40">
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="diensten.html">Diensten</a></li>
+    <li class="nav-item has-dropdown"><a href="diensten.html">Diensten</a>
+      <div class="nav-dropdown"><div class="nav-dropdown-inner">
+        <a href="diensten.html#product-visuals">Product Visuals</a>
+        <a href="diensten.html#content-marketing">Content Marketing</a>
+        <a href="diensten.html#ai-systemen">AI Systemen</a>
+        <a href="diensten.html#short-form">Short Form Content</a>
+        <a href="diensten.html#websites">Websites</a>
+        <a href="diensten.html#motion-design">Motion Design</a>
+      </div></div>
+    </li>
     <li><a href="portfolio.html" class="active">Portfolio</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
@@ -50,10 +80,11 @@
     <li><a href="portfolio.html"><span class="idx">03</span>Portfolio</a></li>
     <li><a href="contact.html"><span class="idx">04</span>Contact</a></li>
   </ul>
-  <div class="mm-foot"><a href="EN/portfolio.html">English</a><span>hello@ibemotionstudio.nl</span><span>Landgraaf, NL</span></div>
+  <div class="mm-foot"><a href="EN/portfolio.html">English</a><span>ibemotionmedia@gmail.com</span><span>Landgraaf, NL</span></div>
 </div>
 
 <!-- ════════ PAGE HERO ════════ -->
+<main id="main-content">
 <header class="page-hero">
   <canvas id="page-hero-canvas" class="page-hero-canvas" aria-hidden="true"></canvas>
   <div class="page-hero-veil"></div>
@@ -73,63 +104,52 @@
     <button class="pf-filter" data-filter="content" role="tab" aria-selected="false">Content</button>
     <button class="pf-filter" data-filter="website" role="tab" aria-selected="false">Website</button>
   </div>
-  <p class="pf-count"><b id="pf-shown">6</b> / 6 projecten</p>
+  <p class="pf-count"><b id="pf-shown">4</b> / 4 projecten</p>
 </div>
 
 <!-- ════════ GRID ════════ -->
 <div class="pf-grid" id="pf-grid">
-  <article class="pf-card rv-up" data-cat="branding motion" data-modal="0" data-cursor="view" tabindex="0" role="button" aria-label="Bekijk RYHFF">
-    <canvas id="pf-canvas-0" class="pf-canvas" aria-hidden="true"></canvas>
+  <article class="pf-card pf-logo-large rv-up" data-cat="branding motion" data-modal="ryhff" data-video data-cursor="view" tabindex="0" role="button" aria-label="Bekijk RYHFF">
+    <div class="pf-logo-bg" style="background:#ffffff;"><img src="assets/RYHFF-logo.webp" alt="RYHFF" width="240" height="120" loading="lazy"/></div>
+    <div class="pf-card-reveal"></div>
+    <video class="pf-video" src="assets/RYHFF-story.mp4" muted loop playsinline preload="metadata" aria-hidden="true" onerror="this.style.display='none'"></video>
     <div class="pf-card-grad"></div><span class="pf-no">01</span>
     <div class="pf-overlay">
       <span class="pf-cat">Branding · Motion</span><h3 class="pf-name">RYHFF</h3>
-      <p class="pf-desc">Volledige rebrand voor opkomend Limburgs talent. Identiteit, motion en release-visuals.</p>
-      <div class="pf-meta"><span class="tag">Branding</span><span class="tag">Motion</span></div>
+      <p class="pf-desc">Brand identity en motion graphics voor een groeiend lifestyle merk.</p>
+      <div class="pf-meta"><span class="tag">Brand Motion</span><span class="tag">Logo Animatie</span><span class="tag">Social Content</span></div>
     </div>
   </article>
-  <article class="pf-card rv-up" data-delay="0.05" data-cat="content" data-modal="1" data-cursor="view" tabindex="0" role="button" aria-label="Bekijk Tuinbazen">
-    <canvas id="pf-canvas-1" class="pf-canvas" aria-hidden="true"></canvas>
+  <article class="pf-card rv-up" data-delay="0.05" data-cat="motion" data-modal="ryhff-supercar" data-video data-maxtime="8" data-cursor="view" tabindex="0" role="button" aria-label="Bekijk RYHFF x Supercar">
+    <div class="pf-logo-bg" style="background:#1A1A1A;"></div>
+    <div class="pf-card-reveal"></div>
+    <video class="pf-video" src="assets/RYHFF-supercar.mp4" muted loop playsinline preload="metadata" aria-hidden="true" onerror="this.style.display='none'"></video>
     <div class="pf-card-grad"></div><span class="pf-no">02</span>
     <div class="pf-overlay">
-      <span class="pf-cat">Content Marketing</span><h3 class="pf-name">Tuinbazen</h3>
-      <p class="pf-desc">Maandelijkse social content voor een hoveniersbedrijf. Organisch bereik +340%.</p>
-      <div class="pf-meta"><span class="tag">Social</span><span class="tag">Animatie</span></div>
+      <span class="pf-cat">Product · Motion</span><h3 class="pf-name">RYHFF x Supercar</h3>
+      <p class="pf-desc">Cinematic product visual voor een exclusief autodetailing merk.</p>
+      <div class="pf-meta"><span class="tag">Product Visual</span><span class="tag">Motion</span><span class="tag">Social Content</span></div>
     </div>
   </article>
-  <article class="pf-card rv-up" data-delay="0.1" data-cat="motion" data-modal="2" data-cursor="view" tabindex="0" role="button" aria-label="Bekijk Aurora Renders">
-    <canvas id="pf-canvas-2" class="pf-canvas" aria-hidden="true"></canvas>
+  <article class="pf-card rv-up" data-delay="0.1" data-cat="content" data-modal="deberen" data-video data-cursor="view" tabindex="0" role="button" aria-label="Bekijk De Beren">
+    <div class="pf-logo-bg" style="background:#1A1A1A;"></div>
+    <div class="pf-card-reveal"></div>
+    <video class="pf-video" src="assets/deberen-comp.mp4" muted loop playsinline preload="metadata" aria-hidden="true" onerror="this.style.display='none'"></video>
     <div class="pf-card-grad"></div><span class="pf-no">03</span>
     <div class="pf-overlay">
-      <span class="pf-cat">Motion · 3D</span><h3 class="pf-name">Aurora Renders</h3>
-      <p class="pf-desc">Fotorealistische 3D product-animaties voor een cosmeticamerk. Conversie +28%.</p>
-      <div class="pf-meta"><span class="tag">3D</span><span class="tag">Render</span></div>
+      <span class="pf-cat">Content · Short Form</span><h3 class="pf-name">De Beren</h3>
+      <p class="pf-desc">Short form advertentie content voor een bekende restaurantketen.</p>
+      <div class="pf-meta"><span class="tag">Advertentie</span><span class="tag">Short Form</span><span class="tag">Content Marketing</span></div>
     </div>
   </article>
-  <article class="pf-card rv-up" data-delay="0.15" data-cat="content" data-modal="3" data-cursor="view" tabindex="0" role="button" aria-label="Bekijk Pulse Reels">
-    <canvas id="pf-canvas-3" class="pf-canvas" aria-hidden="true"></canvas>
+  <article class="pf-card pf-logo-large rv-up" data-delay="0.15" data-cat="content" data-modal="tuinbazen" data-cursor="view" tabindex="0" role="button" aria-label="Bekijk Tuinbazen">
+    <div class="pf-logo-bg" style="background:#eff0e2;"><img src="assets/tuinbazen-logo.webp" alt="Tuinbazen" width="180" height="180" loading="lazy"/></div>
+    <div class="pf-card-reveal"></div>
     <div class="pf-card-grad"></div><span class="pf-no">04</span>
     <div class="pf-overlay">
-      <span class="pf-cat">Short Form</span><h3 class="pf-name">Pulse Reels</h3>
-      <p class="pf-desc">24 Reels per maand voor een sportschool. Gemiddeld 45K views per video.</p>
-      <div class="pf-meta"><span class="tag">Reels</span><span class="tag">Edit</span></div>
-    </div>
-  </article>
-  <article class="pf-card rv-up" data-delay="0.2" data-cat="branding" data-modal="4" data-cursor="view" tabindex="0" role="button" aria-label="Bekijk Nova Identity">
-    <canvas id="pf-canvas-4" class="pf-canvas" aria-hidden="true"></canvas>
-    <div class="pf-card-grad"></div><span class="pf-no">05</span>
-    <div class="pf-overlay">
-      <span class="pf-cat">Branding</span><h3 class="pf-name">Nova Identity</h3>
-      <p class="pf-desc">Merkidentiteit voor een tech-startup. Logo, systeem en animated brand-kit.</p>
-      <div class="pf-meta"><span class="tag">Identiteit</span><span class="tag">Logo</span></div>
-    </div>
-  </article>
-  <article class="pf-card rv-up" data-delay="0.25" data-cat="website motion" data-modal="5" data-cursor="view" tabindex="0" role="button" aria-label="Bekijk IBE Website">
-    <canvas id="pf-canvas-5" class="pf-canvas" aria-hidden="true"></canvas>
-    <div class="pf-card-grad"></div><span class="pf-no">06</span>
-    <div class="pf-overlay">
-      <span class="pf-cat">Website</span><h3 class="pf-name">IBE Website</h3>
-      <p class="pf-desc">Deze site. Vanilla HTML/CSS/JS met Three.js voor maximale performance.</p>
-      <div class="pf-meta"><span class="tag">Three.js</span><span class="tag">WebGL</span></div>
+      <span class="pf-cat">Content · Social</span><h3 class="pf-name">Tuinbazen</h3>
+      <p class="pf-desc">Social content strategie en short form video voor een toonaangevend tuiniersbedrijf.</p>
+      <div class="pf-meta"><span class="tag">Short Form</span><span class="tag">Contentstrategie</span><span class="tag">Reels</span><span class="tag">Batch Productie</span></div>
     </div>
   </article>
 </div>
@@ -139,7 +159,14 @@
   <div class="modal-scrim" data-close></div>
   <div class="modal-box">
     <button class="modal-close" id="modal-close" aria-label="Sluiten"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
-    <div class="modal-canvas-wrap"><canvas id="modal-canvas" class="modal-canvas" aria-hidden="true"></canvas><div class="mc-grad"></div></div>
+    <div class="modal-canvas-wrap" id="modal-canvas-wrap">
+      <canvas id="modal-canvas" class="modal-canvas" aria-hidden="true"></canvas>
+      <div class="mc-grad"></div>
+      <div class="modal-logo-wrap" id="modal-logo-wrap" style="display:none;">
+        <img id="modal-logo" class="modal-logo" src="" alt="" width="200" height="100"/>
+      </div>
+    </div>
+    <div class="modal-video-wrap" id="modal-video-wrap" style="display:none"><video class="modal-video" id="modal-video" muted loop playsinline></video></div>
     <div class="modal-body">
       <span class="modal-cat" id="modal-cat">Categorie</span>
       <h2 class="modal-title" id="modal-title">Project</h2>
@@ -166,14 +193,16 @@
 </section>
 
 <!-- ════════ FOOTER ════════ -->
+</main>
+
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img class="footer-logo" src="assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio">
+      <img class="footer-logo" src="assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio" width="42" height="42">
       <p class="footer-desc">AI-first motion design studio in Landgraaf, Limburg. Wij zetten merken in beweging.</p>
       <div class="footer-socials">
         <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
-        <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-12h4v1.5A6 6 0 0116 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://www.linkedin.com/in/bob-ibe-7ba253254/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-12h4v1.5A6 6 0 0116 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
         <a href="https://tiktok.com" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></a>
       </div>
     </div>
@@ -192,13 +221,14 @@
         <li><a href="diensten.html#ai-systemen">AI Systemen</a></li>
         <li><a href="diensten.html#short-form">Short Form</a></li>
         <li><a href="diensten.html#websites">Websites</a></li>
+        <li><a href="diensten/motion-design.html">Motion Design</a></li>
       </ul>
     </div>
     <div>
       <p class="footer-heading">Contact</p>
       <ul class="footer-links">
-        <li><a href="mailto:hello@ibemotionstudio.nl">hello@ibemotionstudio.nl</a></li>
-        <li><a href="tel:+31612345678">+31 6 12 34 56 78</a></li>
+        <li><a href="mailto:ibemotionmedia@gmail.com">ibemotionmedia@gmail.com</a></li>
+        <li><a href="tel:+31655116082">+31 6 55 11 60 82</a></li>
         <li><a href="contact.html">Landgraaf, Limburg</a></li>
         <li><a href="EN/portfolio.html">English version</a></li>
       </ul>
@@ -206,6 +236,7 @@
   </div>
   <div class="footer-bottom">
     <p class="footer-copy">© 2026 IBE Motion Studio · Landgraaf, Limburg · KvK 98929879</p>
+    <span class="footer-copy">Gemaakt door <a href="https://portfolio-maartendeklerk.netlify.app/" target="_blank" rel="noopener" class="footer-credit-link">Maarten de Klerk</a></span>
     <a href="EN/portfolio.html" class="footer-copy footer-lang-link">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c-2.5 3-4 6.5-4 10s1.5 7 4 10M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10"/></svg>
       English
@@ -222,43 +253,69 @@
 </button>
 <div id="toast-wrap"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="script.js"></script>
 <script>
 (function () {
-  var PROJECTS = [
-    { cat:'Branding · Motion', title:'RYHFF', a:0x8B0000, b:0xD42B2B,
-      desc:'Een volledige merkidentiteit voor opkomend Limburgs talent. Van logo en kleurpalet tot motion-templates voor social en release-visuals. Eén herkenbare visuele taal die past bij de energie van de artiest.',
-      tags:['Branding','Motion Design','Social Templates','Logo'],
-      stats:[{v:'3',l:'Weken'},{v:'+210',suf:'%',l:'Bereik'},{v:'12',l:'Templates'}] },
-    { cat:'Content Marketing', title:'Tuinbazen', a:0x064e2e, b:0x22c55e,
-      desc:'Maandelijks contentpakket voor een hoveniersbedrijf in Limburg. Geanimeerde before/after posts, seizoenscampagnes en reviews in motion. In zes maanden groeide het organisch bereik met 340% en de leads met 80%.',
-      tags:['Content','Social Media','Animatie','Instagram'],
-      stats:[{v:'+340',suf:'%',l:'Bereik'},{v:'+80',suf:'%',l:'Leads'},{v:'6',l:'Maanden'}] },
-    { cat:'Motion · 3D', title:'Aurora Renders', a:0x083344, b:0x60a5fa,
-      desc:'Fotorealistische 3D product-animaties voor een cosmeticamerk. Vijf hero-producten gemodelleerd en geanimeerd in drie formaten: vierkant, liggend en verticaal. Conversie op productpagina’s steeg met 28%.',
-      tags:['3D Render','Product','Motion','E-commerce'],
-      stats:[{v:'+28',suf:'%',l:'Conversie'},{v:'5',l:'Producten'},{v:'15',l:'Renders'}] },
-    { cat:'Short Form', title:'Pulse Reels', a:0x3b0764, b:0xc084fc,
-      desc:'Maandelijks pakket van 24 Reels voor een sportschool. Elke video pakt de kijker in de eerste twee seconden met een sterke hook, snelle motion graphics en een heldere call-to-action. Gemiddeld 45K views per video.',
-      tags:['Reels','TikTok','Motion Graphics','Fitness'],
-      stats:[{v:'45',suf:'K',l:'Views gem.'},{v:'24',l:'Video’s/mnd'},{v:'48',suf:'u',l:'Tot piek'}] },
-    { cat:'Branding', title:'Nova Identity', a:0x7c2d12, b:0xf97316,
-      desc:'Merkidentiteit voor een tech-startup. Logo, typografisch systeem, kleur en een animated brand-kit voor pitch decks en social. Eén consistente taal over elk contactpunt.',
-      tags:['Identiteit','Logo','Brand Kit','Systeem'],
-      stats:[{v:'1',l:'Systeem'},{v:'40',suf:'+',l:'Assets'},{v:'2',l:'Weken'}] },
-    { cat:'Website', title:'IBE Website', a:0x8B0000, b:0xD42B2B,
-      desc:'De website die je nu bekijkt. Gebouwd met pure vanilla HTML, CSS en JavaScript — geen frameworks. Three.js r128 voor de particle wave en interactieve canvassen op elke pagina. Custom cursor, scroll-choreografie en calculator inbegrepen.',
-      tags:['HTML/CSS/JS','Three.js','WebGL','UI'],
-      stats:[{v:'100',l:'Performance'},{v:'0',l:'Frameworks'},{v:'10',l:'Pagina’s'}] }
-  ];
+  window.PROJECTS = {
+    'ryhff': {
+      cat: 'Branding · Motion', title: 'RYHFF',
+      desc: 'RYHFF is een groeiend lifestyle merk waarvoor IBE Motion Studio de volledige brand identity in beweging heeft gezet. Van logo-animaties tot social content, alles consistent, scherp en herkenbaar.',
+      tags: ['Brand Motion', 'Logo Animatie', 'Social Content', 'Motion Guideline'],
+      logo: 'assets/RYHFF-logo.webp', logoBg: '#ffffff', a: 0x8B0000, b: 0xD42B2B
+    },
+    'ryhff-supercar': {
+      cat: 'Product · Motion', title: 'RYHFF x Supercar',
+      desc: 'Cinematic product visual voor een exclusief autodetailing project. Gemaakt voor social media distributie en merkversterking.',
+      tags: ['Product Visual', 'Motion', 'Social Content'], a: 0x222222, b: 0xD42B2B, video: 'assets/RYHFF-supercar.mp4'
+    },
+    'deberen': {
+      cat: 'Content · Short Form', title: 'De Beren',
+      desc: 'Short form advertentie content voor De Beren restaurantketen. Geoptimaliseerd voor social media en digital advertising.',
+      tags: ['Advertentie', 'Short Form', 'Content Marketing'], a: 0x3a0a0a, b: 0xD42B2B, video: 'assets/deberen-comp.mp4'
+    },
+    'tuinbazen': {
+      cat: 'Content · Social', title: 'Tuinbazen',
+      desc: 'Social content strategie en short form video voor Tuinbazen. Consistente wekelijkse output van Reels en korte clips.',
+      tags: ['Short Form', 'Contentstrategie', 'Reels', 'Batch Productie'],
+      logo: 'assets/tuinbazen-logo.webp', logoBg: '#eff0e2', a: 0x064e2e, b: 0x22c55e
+    }
+  };
 
   if (window.afterLoad) {
     afterLoad('page-hero-canvas', function (c) { IBE.initAmbient(c, 0xD42B2B, 0x8B0000); });
     afterLoad('cta-canvas', function (c) { IBE.initAmbient(c, 0xF7F6F2, 0xD42B2B); });
   }
-  if (window.IBE && IBE.lazy) PROJECTS.forEach(function (p, i) {
-    IBE.lazy('pf-canvas-' + i, function (c) { IBE.initGridCanvas(c, { a: p.a, b: p.b, c: 0xF7F6F2, speed: 0.9 + i * 0.05, amp: 1.0 }); });
+
+  /* Portfolio kaarten gebruiken statische .pf-logo-bg achtergronden, geen card-canvas meer */
+
+  /* HOVER VIDEO (mobiel: autoplay loop) */
+  var TOUCH = window.matchMedia && window.matchMedia('(hover:none),(pointer:coarse)').matches;
+  Array.prototype.slice.call(document.querySelectorAll('.pf-card[data-video]')).forEach(function (item) {
+    var vid = item.querySelector('video');
+    if (!vid) return;
+    var max = parseFloat(item.getAttribute('data-maxtime'));
+    if (max) vid.addEventListener('timeupdate', function () { if (vid.currentTime > max) vid.currentTime = 0; });
+
+    /* Laad eerste frame zodat het zichtbaar is zonder hover */
+    vid.preload = 'auto';
+    vid.addEventListener('loadeddata', function () {
+      vid.currentTime = 0.01;
+    }, { once: true });
+    vid.load();
+
+    if (TOUCH) {
+      vid.play().catch(function () {});
+    } else {
+      item.addEventListener('mouseenter', function () {
+        vid.currentTime = 0;
+        vid.play().catch(function () {});
+      });
+      item.addEventListener('mouseleave', function () {
+        vid.pause();
+        vid.currentTime = 0.01;
+      });
+    }
   });
 
   /* FILTER */
@@ -285,33 +342,68 @@
   (function () {
     var modal = document.getElementById('modal');
     var closeBtn = document.getElementById('modal-close');
+    var elLogo = document.getElementById('modal-logo');
+    var elLogoWrap = document.getElementById('modal-logo-wrap');
     var elCat = document.getElementById('modal-cat'), elTitle = document.getElementById('modal-title');
     var elDesc = document.getElementById('modal-desc'), elStats = document.getElementById('modal-stats'), elTags = document.getElementById('modal-tags');
     var canvas = document.getElementById('modal-canvas');
     var ctrl = null, lastFocus = null;
 
-    function open(i) {
-      var p = PROJECTS[i]; if (!p) return;
+    function open(key) {
+      var p = window.PROJECTS[key]; if (!p) return;
       lastFocus = document.activeElement;
+      if (elLogo && elLogoWrap) {
+        if (p.logo) {
+          elLogo.src = p.logo;
+          elLogo.alt = p.title;
+          elLogoWrap.style.background = p.logoBg || '#ffffff';
+          elLogoWrap.style.display = 'flex';
+        } else {
+          elLogoWrap.style.display = 'none';
+          elLogo.removeAttribute('src');
+        }
+      }
       elCat.textContent = p.cat; elTitle.textContent = p.title; elDesc.textContent = p.desc;
-      elStats.innerHTML = p.stats.map(function (s) {
+      elStats.style.display = (p.stats && p.stats.length) ? '' : 'none';
+      elStats.innerHTML = (p.stats || []).map(function (s) {
         return '<div class="modal-stat"><div class="v">' + s.v + (s.suf ? '<span class="suf">' + s.suf + '</span>' : '') + '</div><div class="l">' + s.l + '</div></div>';
       }).join('');
       elTags.innerHTML = p.tags.map(function (t) { return '<span class="tag">' + t + '</span>'; }).join('');
-      modal.classList.add('open'); document.body.style.overflow = 'hidden';
       if (ctrl) { ctrl.stop(); ctrl = null; }
-      if (typeof THREE !== 'undefined' && IBE.initModalWave) ctrl = IBE.initModalWave(canvas, { a: p.a, b: p.b, c: 0xF7F6F2 });
+      var vWrap = document.getElementById('modal-video-wrap');
+      var cWrap = document.getElementById('modal-canvas-wrap');
+      var mv = document.getElementById('modal-video');
+      if (p.video && vWrap && mv) {
+        if (cWrap) cWrap.style.display = 'none';
+        vWrap.style.display = '';
+        mv.src = p.video; mv.currentTime = 0; mv.play().catch(function () {});
+      } else {
+        if (vWrap && mv) { vWrap.style.display = 'none'; mv.pause(); mv.removeAttribute('src'); }
+        if (cWrap) cWrap.style.display = '';
+        var cv = cWrap ? cWrap.querySelector('canvas') : null;
+        var grad = cWrap ? cWrap.querySelector('.mc-grad') : null;
+        if (p.logo) {
+          if (cv) cv.style.display = 'none';
+          if (grad) grad.style.display = 'none';
+        } else {
+          if (cv) cv.style.display = '';
+          if (grad) grad.style.display = '';
+          if (typeof THREE !== 'undefined' && IBE.initModalWave) ctrl = IBE.initModalWave(canvas, { a: p.a || 0x8B0000, b: p.b || 0xD42B2B, c: 0xF7F6F2 });
+        }
+      }
+      modal.classList.add('open'); document.body.style.overflow = 'hidden';
       closeBtn.focus();
     }
     function close() {
       modal.classList.remove('open'); document.body.style.overflow = '';
       if (ctrl) { ctrl.stop(); ctrl = null; }
+      var mv = document.getElementById('modal-video'); if (mv) mv.pause();
       if (lastFocus) lastFocus.focus();
     }
     Array.prototype.slice.call(document.querySelectorAll('.pf-card')).forEach(function (card) {
-      card.addEventListener('click', function () { open(parseInt(card.getAttribute('data-modal'), 10)); });
+      card.addEventListener('click', function () { open(card.getAttribute('data-modal')); });
       card.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(parseInt(card.getAttribute('data-modal'), 10)); }
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(card.getAttribute('data-modal')); }
       });
     });
     closeBtn.addEventListener('click', close);

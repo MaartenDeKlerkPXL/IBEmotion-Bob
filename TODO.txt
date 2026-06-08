@@ -1,43 +1,56 @@
-IBE MOTION STUDIO — TO DO LIJST
+IBE MOTION STUDIO - TO DO LIJST
 ================================
-Bijwerken voordat de site live gaat:
+Bijgewerkt: juni 2026
 
-[ ] Sociale media links toevoegen
-    - Instagram: vervang https://instagram.com door echte profiellink
-    - LinkedIn: vervang https://linkedin.com door echte profiellink
-    - TikTok: vervang https://tiktok.com door echte profiellink
+AFGEROND
+[x] KvK nummer toegevoegd: 98929879
+[x] Taalschakelaar NL/EN actieve staat
+[x] Contact als nav-link toegevoegd
+[x] Rode scrollbar
+[x] Scroll-to-top knop met progressieve border
+[x] Em-dashes verwijderd
+[x] Telefoonnummer bijgewerkt: +31655116082
+[x] E-mail bijgewerkt: ibemotionmedia@gmail.com
+[x] Doorlooptijd calculator gradient verwijderd
+[x] SEO meta tags alle pagina's
+[x] Motion Design dienstenpagina aangemaakt
+[x] Diensten dropdown in navigatie
+[x] Performance fixes (font-display, lazy loading, main landmark)
+[x] iOS form zoom fix
+[x] Nieuwe "IBE Pulse" cursor
+[x] Portfolio gevuld met echte projecten: RYHFF, RYHFF Supercar, De Beren, Tuinbazen
+[x] RYHFF logo en Tuinbazen logo toegevoegd
+[x] LinkedIn link toegevoegd: https://www.linkedin.com/in/bob-ibe-7ba253254/
 
-[ ] Contactgegevens controleren
-    - E-mailadres: controleer of hello@ibemotionstudio.nl actief is
-    - Telefoonnummer: vervang +31 6 12 34 56 78 door het echte nummer
+NOG TE DOEN VOOR LIVE
+[ ] Video's renderen/comprimeren naar web-formaat (max 8MB, H.264, AAC)
+    - RYHFF-story.mp4: bronbestand is nog Ryhff-sanamstory.mov (QuickTime).
+      Exporteer naar assets/RYHFF-story.mp4 (H.264) en koppel als RYHFF preview-video.
+      Tot die tijd toont de RYHFF kaart de Three.js canvas als fallback.
+    - deberen-adfinal.mp4 (nu 40MB) - comprimeer via Handbrake/ffmpeg, target 8MB, H.264, AAC
+    - slideinPP.mp4 (nu 41MB) - zelfde instellingen
+    Daarna toevoegen als extra portfolio projecten.
+
+[ ] Sociale media profiellinks invullen
+    - Instagram: vervang https://instagram.com (zodra account actief is)
+    - TikTok: vervang https://tiktok.com (zodra account actief is)
+    - LinkedIn: ingevuld (bob-ibe-7ba253254)
 
 [ ] Formspree instellen
-    - Maak een gratis account aan op formspree.io
-    - Maak een form aan en kopieer het ID
-    - Vervang YOUR_FORMSPREE_ID in contact.html (NL en EN) door het echte ID
+    - Account aanmaken op formspree.io
+    - Form ID invullen als YOUR_FORMSPREE_ID in contact.html (NL + EN)
 
-[ ] Portfolio vullen
-    - Voeg echte projectafbeeldingen toe aan de portfolio items
-    - RYHFF: voeg screenshots of renders toe
-    - Tuinbazen: voeg social content voorbeelden toe
-    - Overige projecten: voeg visuele voorbeelden toe
-
-[ ] Afbeeldingen toevoegen
-    - Diensten pagina: voeg echte werkfoto's of projectbeelden toe
-    - Homepage: overweeg een profielfoto of studio foto toe te voegen
-
-[ ] Socials activeren in footer
-    - Controleer of TikTok, Instagram en LinkedIn profielen bestaan
-    - Vervang placeholder URLs door echte profiel URLs
+[ ] Portfolio aanvullen
+    - Extra projecten toevoegen na video-compressie (zie boven)
+    - Eventueel meer cases met echte beelden/renders
 
 [ ] Domein en hosting
-    - Controleer of ibemotionstudio.nl actief is en wijst naar de juiste server
-    - Stel HTTPS in
-    - Test alle pagina's na upload op het echte domein
+    - ibemotionstudio.nl laten wijzen naar server
+    - HTTPS instellen
+    - Alle pagina's testen op live domein
 
-[ ] Laatste controles voor live
-    - Test alle formulieren met echte gegevens
-    - Test taalschakelaar op alle pagina's
-    - Test mobiele versie op echte telefoon (niet alleen browser resize)
-    - Controleer laadtijd via PageSpeed Insights
-    - Controleer of alle afbeeldingen laden via het echte domein
+[ ] Na live gaan
+    - Google Search Console aanmaken en sitemap indienen
+    - Google Analytics of Plausible instellen
+    - PageSpeed opnieuw meten op live domein
+    - Testen op echte iPhone (niet alleen browser)

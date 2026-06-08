@@ -3,18 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IBE Motion Studio — AI-first motion design · Landgraaf</title>
+<title>IBE Motion Studio, AI-first motion design · Landgraaf</title>
 <meta name="description" content="IBE Motion Studio zet merken in beweging. AI-first motion design, 3D product visuals, content en systemen uit Landgraaf, Limburg. Resultaat eerst.">
 <link rel="icon" type="image/png" href="assets/IBEMOTION-logo-NO-BG-TEXT.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
+<!-- SEO / social -->
+<link rel="canonical" href="https://ibemotionstudio.nl/index.html"/>
+<meta property="og:title" content="IBE Motion Studio · AI-first motion design in Landgraaf"/>
+<meta property="og:description" content="IBE Motion Studio zet merken in beweging. AI-first motion design, 3D product visuals, content en systemen uit Landgraaf, Limburg. Resultaat eerst."/>
+<meta property="og:image" content="https://ibemotionstudio.nl/assets/IBEMOTION-logo-NO-BG.png"/>
+<meta property="og:url" content="https://ibemotionstudio.nl/index.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="nl_NL"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="IBE Motion Studio · AI-first motion design in Landgraaf"/>
+<meta name="twitter:description" content="IBE Motion Studio zet merken in beweging. AI-first motion design, 3D product visuals, content en systemen uit Landgraaf, Limburg. Resultaat eerst."/>
+<meta name="twitter:image" content="https://ibemotionstudio.nl/assets/IBEMOTION-logo-NO-BG.png"/>
+<link rel="alternate" hreflang="nl" href="https://ibemotionstudio.nl/index.html"/>
+<link rel="alternate" hreflang="en" href="https://ibemotionstudio.nl/EN/index.html"/>
+<link rel="alternate" hreflang="x-default" href="https://ibemotionstudio.nl/index.html"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; frame-ancestors 'none'"/>
+<meta http-equiv="X-Frame-Options" content="DENY"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Ga naar hoofdinhoud</a>
 
 <div id="loader">
-  <img class="loader-logo" src="assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio">
+  <img class="loader-logo" src="assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio" width="180" height="180">
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
   <div class="loader-count"><b>0</b> / 100</div>
 </div>
@@ -33,15 +53,25 @@
 
 <div id="cursor-ring"></div>
 <div id="cursor-dot"></div>
+<div id="cursor-pulse"></div>
 <div class="vignette"></div>
 
 <nav aria-label="Hoofdnavigatie">
-  <a href="index.html" class="nav-logo" aria-label="IBE Motion Studio — home">
-    <img src="assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio">
+  <a href="index.html" class="nav-logo" aria-label="IBE Motion Studio, home">
+    <img src="assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio" width="40" height="40">
   </a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="diensten.html">Diensten</a></li>
+    <li class="nav-item has-dropdown"><a href="diensten.html">Diensten</a>
+      <div class="nav-dropdown"><div class="nav-dropdown-inner">
+        <a href="diensten.html#product-visuals">Product Visuals</a>
+        <a href="diensten.html#content-marketing">Content Marketing</a>
+        <a href="diensten.html#ai-systemen">AI Systemen</a>
+        <a href="diensten.html#short-form">Short Form Content</a>
+        <a href="diensten.html#websites">Websites</a>
+        <a href="diensten.html#motion-design">Motion Design</a>
+      </div></div>
+    </li>
     <li><a href="portfolio.html">Portfolio</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
@@ -66,12 +96,13 @@
   </ul>
   <div class="mm-foot">
     <a href="EN/index.html">English</a>
-    <span>hello@ibemotionstudio.nl</span>
+    <span>ibemotionmedia@gmail.com</span>
     <span>Landgraaf, NL</span>
   </div>
 </div>
 
 
+<main id="main-content">
 <header class="hero">
   <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
   <svg class="hero-pattern" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
@@ -118,8 +149,8 @@
 <!-- ════════ MARQUEE ════════ -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Motion Design</span><span class="o">3D Renders</span><span>AI Systemen</span><span class="o">Short Form</span><span>Branding</span><span class="o">Websites</span><span>Content</span><span class="o">Strategie</span>
-    <span>Motion Design</span><span class="o">3D Renders</span><span>AI Systemen</span><span class="o">Short Form</span><span>Branding</span><span class="o">Websites</span><span>Content</span><span class="o">Strategie</span>
+    <span>Motion Design</span><span class="o">Motion Design</span><span>AI Systemen</span><span class="o">Short Form</span><span>Branding</span><span class="o">Websites</span><span>Content</span><span class="o">Strategie</span>
+    <span>Motion Design</span><span class="o">Motion Design</span><span>AI Systemen</span><span class="o">Short Form</span><span>Branding</span><span class="o">Websites</span><span>Content</span><span class="o">Strategie</span>
   </div>
 </div>
 
@@ -127,7 +158,7 @@
 <section class="section zoom" data-breath>
   <p class="section-label rv"><span class="diag-bar sm"></span> Het verschil</p>
   <h2 class="section-title rv-up" data-delay="0.05">De meeste bureaus<br>beginnen bij het idee.<br><span class="outline">Wij bij het resultaat.</span></h2>
-  <p class="section-sub rv" data-delay="0.1">Strategie zonder uitvoering is een mening. Uitvoering zonder strategie is ruis. Wij doen beide — en meten of het werkt.</p>
+  <p class="section-sub rv" data-delay="0.1">Strategie zonder uitvoering is een mening. Uitvoering zonder strategie is ruis. Wij doen beide, en meten of het werkt.</p>
 </section>
 
 <!-- ════════ WHY ════════ -->
@@ -216,9 +247,31 @@
         <div class="svc-card-tags"><span class="tag">Reels</span><span class="tag">TikTok</span><span class="tag">Edit</span></div>
       </div>
     </a>
+    <a href="diensten.html#websites" class="svc-card rv-up" data-tilt data-delay="0.32">
+      <div class="svc-card-top">
+        <span class="svc-card-num">05</span>
+        <svg class="svc-card-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg>
+      </div>
+      <div>
+        <h3 class="svc-card-title">Websites</h3>
+        <p class="svc-card-desc">Niet alleen mooi, maar snel en gericht op conversie. Websites die jouw verhaal vertellen en bezoekers omzetten in gesprekken.</p>
+        <div class="svc-card-tags"><span class="tag">UI/UX</span><span class="tag">Code</span><span class="tag">SEO</span></div>
+      </div>
+    </a>
+    <a href="diensten.html#motion-design" class="svc-card rv-up" data-tilt data-delay="0.4">
+      <div class="svc-card-top">
+        <span class="svc-card-num">06</span>
+        <svg class="svc-card-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg>
+      </div>
+      <div>
+        <h3 class="svc-card-title">Motion<br>Design</h3>
+        <p class="svc-card-desc">Bewegend beeld dat blijft hangen. Van logo-animaties tot volledige brand motion systemen, elk frame een bewuste keuze.</p>
+        <div class="svc-card-tags"><span class="tag">Logo</span><span class="tag">Brand</span><span class="tag">After Effects</span></div>
+      </div>
+    </a>
   </div>
   <div style="margin-top:36px" class="rv-up" data-delay="0.1">
-    <a href="diensten.html" class="btn btn-ghost">Alle 5 diensten <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a href="diensten.html" class="btn btn-ghost">Alle 6 diensten <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
@@ -259,14 +312,16 @@
 </section>
 
 <!-- ════════ FOOTER ════════ -->
+</main>
+
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img class="footer-logo" src="assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio">
+      <img class="footer-logo" src="assets/IBEMOTION-logo-NO-BG.png" alt="IBE Motion Studio" width="42" height="42">
       <p class="footer-desc">AI-first motion design studio in Landgraaf, Limburg. Wij zetten merken in beweging.</p>
       <div class="footer-socials">
         <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
-        <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-12h4v1.5A6 6 0 0116 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://www.linkedin.com/in/bob-ibe-7ba253254/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-12h4v1.5A6 6 0 0116 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
         <a href="https://tiktok.com" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></a>
       </div>
     </div>
@@ -287,13 +342,14 @@
         <li><a href="diensten.html#ai-systemen">AI Systemen</a></li>
         <li><a href="diensten.html#short-form">Short Form</a></li>
         <li><a href="diensten.html#websites">Websites</a></li>
+        <li><a href="diensten/motion-design.html">Motion Design</a></li>
       </ul>
     </div>
     <div>
       <p class="footer-heading">Contact</p>
       <ul class="footer-links">
-        <li><a href="mailto:hello@ibemotionstudio.nl">hello@ibemotionstudio.nl</a></li>
-        <li><a href="tel:+31612345678">+31 6 12 34 56 78</a></li>
+        <li><a href="mailto:ibemotionmedia@gmail.com">ibemotionmedia@gmail.com</a></li>
+        <li><a href="tel:+31655116082">+31 6 55 11 60 82</a></li>
         <li><a href="contact.html">Landgraaf, Limburg</a></li>
         <li><a href="EN/index.html">English version</a></li>
       </ul>
@@ -301,6 +357,7 @@
   </div>
   <div class="footer-bottom">
     <p class="footer-copy">© 2026 IBE Motion Studio · Landgraaf, Limburg · KvK 98929879</p>
+    <span class="footer-copy">Gemaakt door <a href="https://portfolio-maartendeklerk.netlify.app/" target="_blank" rel="noopener" class="footer-credit-link">Maarten de Klerk</a></span>
     <a href="EN/index.html" class="footer-copy footer-lang-link">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c-2.5 3-4 6.5-4 10s1.5 7 4 10M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10"/></svg>
       English
@@ -317,7 +374,7 @@
 </button>
 <div id="toast-wrap"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="script.js"></script>
 <script>
 (function () {
