@@ -1059,10 +1059,12 @@ footer{position:relative;z-index:3;background:var(--black);border-top:1px solid 
   opacity: 0;
   pointer-events: none;
 }
-#vid-scroll-el {
+#vid-scroll-canvas {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* werkt niet op canvas — sizing gebeurt in JS (resizeCanvas) */
   display: block;
 }
 #vid-scroll-veil {

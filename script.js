@@ -100,63 +100,137 @@
      ---------------------------------------------------------- */
   (function vidScroll() {
     var wrap   = document.getElementById('vid-scroll');
-    var vid    = document.getElementById('vid-scroll-el');
+    var canvas = document.getElementById('vid-scroll-canvas');
     var veil   = document.getElementById('vid-scroll-veil');
     var spacer = document.getElementById('vid-scroll-spacer');
-    if (!wrap || !vid) return;
+    if (!wrap || !canvas) return;
 
-    /* Video staat altijd stil — alleen scroll stuurt playback */
-    vid.pause();
-    vid.currentTime = 0;
+    /* prefers-reduced-motion: sla sequence over */
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      wrap.style.display = 'none';
+      document.body.classList.add('vid-done');
+      return;
+    }
 
-    /* Toon de video zodra ibe:loaded vuurt (na loader) */
-    window.addEventListener('ibe:loaded', function () {
-      wrap.classList.add('active');
-      /* Zorg dat video geladen is zodat scrubbing werkt */
-      vid.load();
-      /* Scroll naar top voor het geval de pagina al gescrold was */
-      window.scrollTo(0, 0);
-    });
+    var ctx    = canvas.getContext('2d');
 
-    var done = false;
+    // De specifieke bestandsnamen reeks
+    var START_FRAME = 100;
+    var END_FRAME   = 189;
+    var TOTAL_FRAMES = (END_FRAME - START_FRAME) + 1; // Dit zijn 90 frames in totaal
+    var BASE        = 'assets/scrol%20video%20V2/Comp%20';
+    var frames      = [];
 
+    // Interne tellers moeten áltijd op 0 beginnen
+    var loaded = 0;
+    var currentFrame = 0;
+    var done   = false;
+
+    /* Canvas sizing — object-fit: cover gedrag, DPR-aware */
+    function resizeCanvas() {
+      var dpr = window.devicePixelRatio || 1;
+      var w = window.innerWidth;
+      var h = window.innerHeight;
+
+      canvas.width  = w * dpr;
+      canvas.height = h * dpr;
+      canvas.style.width  = w + 'px';
+      canvas.style.height = h + 'px';
+
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      drawFrame(currentFrame);
+    }
+    window.addEventListener('resize', resizeCanvas, { passive: true });
+
+    function drawFrame(index) {
+      var img = frames[index];
+      if (!img || !img.complete || !img.naturalWidth) return;
+
+      var cw = window.innerWidth, ch = window.innerHeight;
+      var iw = img.naturalWidth, ih = img.naturalHeight;
+      var scale = Math.max(cw / iw, ch / ih);
+      var sw = iw * scale, sh = ih * scale;
+      var ox = (cw - sw) / 2, oy = (ch - sh) / 2;
+
+      ctx.clearRect(0, 0, cw, ch);
+      ctx.drawImage(img, ox, oy, sw, sh);
+    }
+
+    /* Laad de exacte reeks frames in (van 100 t/m 189) */
+    for (var i = 0; i < TOTAL_FRAMES; i++) {
+      (function (idx) {
+        var img = new Image();
+        var fileNum = START_FRAME + idx; // Dit maakt 100, 101, 102, etc.
+
+        img.src = BASE + fileNum + '.jpg';
+
+        img.onload = function () {
+          loaded++;
+          /* Teken het allereerste frame (wat nu frame 100 is op index 0) direct */
+          if (idx === 0) {
+            resizeCanvas();
+          }
+          if (idx === currentFrame) {
+            drawFrame(currentFrame);
+          }
+        };
+        // We slaan ze op in een array van 0 t/m 89
+        frames[idx] = img;
+      })(i);
+    }
+
+      function activateSequence() {
+        wrap.classList.add('active');
+        resizeCanvas();
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      }
+
+    if (document.body.classList.contains('loaded')) {
+      activateSequence();
+    } else {
+      window.addEventListener('ibe:loaded', activateSequence);
+    }
+
+    /* Scroll handler */
     window.addEventListener('scroll', function () {
       if (done) return;
-      if (!wrap.classList.contains('active')) return;
+      // Zorg dat in ieder geval het eerste frame (index 0) binnen is
+      if (!frames[0] || !frames[0].complete) return;
 
-      var scrollY  = window.pageYOffset;
-      var maxScroll = spacer ? spacer.offsetHeight - window.innerHeight : window.innerHeight * 2;
-      if (maxScroll <= 0) maxScroll = window.innerHeight * 2;
+      var scrollY   = window.pageYOffset;
+      var maxScroll = (spacer && spacer.offsetHeight > 0) ? spacer.offsetHeight - window.innerHeight : window.innerHeight * 3;
 
       var progress = Math.max(0, Math.min(1, scrollY / maxScroll));
 
-      /* Scrub video */
-      if (vid.duration && isFinite(vid.duration)) {
-        vid.currentTime = progress * vid.duration;
+      // Koppel je scroll progressie (0 tot 100%) aan de array index (0 t/m 89)
+      var frameIndex = Math.min(Math.floor(progress * (TOTAL_FRAMES - 1)), TOTAL_FRAMES - 1);
+
+      if (frameIndex !== currentFrame) {
+        currentFrame = frameIndex;
+        drawFrame(currentFrame);
       }
 
-      /* Veil fadet in bij laatste 30% van de scroll */
       var veilProgress = Math.max(0, (progress - 0.7) / 0.3);
       if (veil) veil.style.opacity = veilProgress.toFixed(3);
 
-      /* Als scroll volledig — verberg video en ga naar site */
-      if (progress >= 1) {
+      if (progress >= 0.99) {
         done = true;
-        wrap.classList.add('done');
+
+        /* FIX 1: Zet de scroll onder water direct terug naar de top.
+           De bezoeker ziet dit niet omdat de video hier nog 100% zichtbaar overheen ligt. */
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+
+        /* FIX 2: Verwijder nu pas de spacer en start de fade-out van de video.
+           Omdat we al op top:0 staan, veroorzaakt het weghalen van de spacer geen sprong meer. */
         document.body.classList.add('vid-done');
-        /* Scroll de gebruiker naar de echte pagina top */
+        wrap.classList.add('done');
+
+        /* FIX 3: Verberg de video-laag volledig zodra de CSS fade-out klaar is. */
         setTimeout(function () {
-          window.scrollTo(0, 0);
           wrap.style.display = 'none';
         }, 520);
       }
     }, { passive: true });
-
-    /* prefers-reduced-motion: sla video over */
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      wrap.style.display = 'none';
-      document.body.classList.add('vid-done');
-    }
   })();
 
   /* ----------------------------------------------------------
