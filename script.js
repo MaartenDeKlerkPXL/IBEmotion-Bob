@@ -156,17 +156,15 @@
       ctx.drawImage(img, ox, oy, sw, sh);
     }
 
-    /* Laad de exacte reeks frames in (van 100 t/m 189) */
     for (var i = 0; i < TOTAL_FRAMES; i++) {
       (function (idx) {
         var img = new Image();
-        var fileNum = START_FRAME + idx; // Dit maakt 100, 101, 102, etc.
+        var fileNum = START_FRAME + idx;
 
         img.src = BASE + fileNum + '.jpg';
 
         img.onload = function () {
           loaded++;
-          /* Teken het allereerste frame (wat nu frame 100 is op index 0) direct */
           if (idx === 0) {
             resizeCanvas();
           }
@@ -174,7 +172,6 @@
             drawFrame(currentFrame);
           }
         };
-        // We slaan ze op in een array van 0 t/m 89
         frames[idx] = img;
       })(i);
     }
@@ -193,16 +190,12 @@
 
     /* Scroll handler */
     window.addEventListener('scroll', function () {
-      if (done) return;
-      // Zorg dat in ieder geval het eerste frame (index 0) binnen is
-      if (!frames[0] || !frames[0].complete) return;
+      if (done) return;if (!frames[0] || !frames[0].complete) return;
 
       var scrollY   = window.pageYOffset;
       var maxScroll = (spacer && spacer.offsetHeight > 0) ? spacer.offsetHeight - window.innerHeight : window.innerHeight * 3;
 
       var progress = Math.max(0, Math.min(1, scrollY / maxScroll));
-
-      // Koppel je scroll progressie (0 tot 100%) aan de array index (0 t/m 89)
       var frameIndex = Math.min(Math.floor(progress * (TOTAL_FRAMES - 1)), TOTAL_FRAMES - 1);
 
       if (frameIndex !== currentFrame) {
@@ -215,19 +208,14 @@
 
       if (progress >= 0.99) {
         done = true;
-
-        /* FIX 1: Zet de scroll onder water direct terug naar de top.
-           De bezoeker ziet dit niet omdat de video hier nog 100% zichtbaar overheen ligt. */
-        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-
-        /* FIX 2: Verwijder nu pas de spacer en start de fade-out van de video.
-           Omdat we al op top:0 staan, veroorzaakt het weghalen van de spacer geen sprong meer. */
+        document.documentElement.style.setProperty('scroll-behavior', 'auto', 'important');
+        void document.documentElement.offsetHeight;
         document.body.classList.add('vid-done');
+        window.scrollTo(0, 0);
         wrap.classList.add('done');
-
-        /* FIX 3: Verberg de video-laag volledig zodra de CSS fade-out klaar is. */
         setTimeout(function () {
           wrap.style.display = 'none';
+          document.documentElement.style.removeProperty('scroll-behavior');
         }, 520);
       }
     }, { passive: true });
